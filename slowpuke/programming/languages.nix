@@ -2,8 +2,10 @@
 
 {
     home.packages = with pkgs; [
-        # clang
+        # clangStdenv
+        # llvmPackages.libcxxClang
         gcc
+        cmake
         rustup
         lua
         love
@@ -11,7 +13,7 @@
         godot_4
 
         # LSPs
-        clang-tools
-        lua-language-server
+        # clang-tools
+        # lua-language-server
     ];
 }

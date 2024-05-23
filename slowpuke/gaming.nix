@@ -7,7 +7,6 @@
         prismlauncher
         openmw
 
-        # protonup-qt
         protonup-ng
         gamemode
 
@@ -15,8 +14,6 @@
         pcsx2
     ];
 
-    # what if i created a similar file to this one and imported in configuration.nix, or better just
-    # import this one in configuration.nix, think about it
     programs.steam = {
         enable = true;
         extraCompatPackages = with pkgs; [

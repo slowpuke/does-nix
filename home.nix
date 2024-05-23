@@ -13,7 +13,7 @@
     home.homeDirectory = "/home/slowpuke";
     nixpkgs.config.allowUnfree = true;
 
-    home.stateVersion = "23.11"; # Please read the comment before changing.
+    home.stateVersion = "23.11";
 
     # general packages
     home.packages = with pkgs; [
@@ -31,6 +31,7 @@
         rofi
         obsidian
         gparted
+        unzip
     ];
 
     programs.home-manager.enable = true;

@@ -24,8 +24,6 @@
                 "git"
                 "sudo"
                 "dirhistory"
-                # not found apparently, invesitgate
-                # "zsh-syntax-highlighting"
             ];
 
             extraConfig = ''
