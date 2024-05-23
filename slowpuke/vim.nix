@@ -2,13 +2,33 @@
 
 {
     home.packages = with pkgs; [
-        nvim
+        neovim
         vim
         kate
-    ]
+    ];
 
-    programs.nvim = {
-        enable = true;
-        # there was a way to do it like this with the lua setup, check kate notes
-    }
+    programs.vim = {
+        enable = false;
+        defaultEditor = true;
+        extraConfig = ''
+            set encoding=utf-8
+            set belloff=all
+            set noerrorbells
+            set tabstop=4 softtabstop=4
+            set shiftwidth=4
+            set expandtab
+            set smartindent
+            set hidden
+            set noswapfile
+            set nobackup
+            set undodir=~/.vim/undodir
+            set undofile
+            set incsearch
+            set signcolumn=yes
+            set relativenumber
+            set number
+            set cursorline
+            set guicursor+=a:blinkon0
+        '';
+    };
 }
