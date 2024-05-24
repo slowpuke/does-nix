@@ -7,6 +7,7 @@
         ./slowpuke/programming/languages.nix
         ./slowpuke/git.nix
         ./slowpuke/vim.nix
+        ./slowpuke/rofi/rofi.nix
     ];
 
     home.username = "slowpuke";
@@ -33,6 +34,7 @@
         gparted
         unzip
         fastfetch
+        vlc
     ];
 
     programs.home-manager.enable = true;

@@ -22,7 +22,7 @@
             shell_integration = "enabled no-cursor";
             confirm_os_window_close = 0;
 
-            resize_in_steps = "yes";
+            # resize_in_steps = "yes";
         };
         keybindings = {
             "ctrl+shift+c" = "copy_to_clipboard";

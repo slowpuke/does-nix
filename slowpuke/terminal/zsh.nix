@@ -4,9 +4,9 @@
     programs.zsh = {
         enable = true;
         syntaxHighlighting = {
-            enable = false;
+            enable = true;
             styles = {
-                "alias" = "fg=yellow";
+                "alias" = "fg=magenta";
                 "builtin" = "fg=magenta";
                 "command" = "fg=magenta";
             };
@@ -15,17 +15,17 @@
             pg = "bash ~/here/programming/bash/password-generator";
             ssd-update = "lua ~/here/programming/lua-projects/backup-notification/main.lua update";
             lisp = "sbcl --script $1";
+            neofetch = "fastfetch";
         };
         oh-my-zsh = {
             enable = true;
-
-            theme = "agnoster";
+            # https://github.com/halfo/lambda-mod-zsh-theme/
+            theme = "lambda";
             plugins = [
                 "git"
                 "sudo"
                 "dirhistory"
             ];
-
             extraConfig = ''
                 ENABLE_CORRECTION="true"
                 COMPLETION_WAITING_DOTS="true"

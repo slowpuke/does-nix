@@ -6,6 +6,8 @@
         ./slowpuke/gaming.nix   # steam needs to be system wide app to be configured
     ];
 
+    boot.kernelPackages = pkgs.linuxPackages_6_9;
+
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
@@ -91,19 +93,22 @@
     environment.systemPackages = with pkgs; [
         nix-ld
         nix-index
+        linuxKernel.packages.linux_6_9.xpadneo
     ];
 
     programs.nix-ld = {
         enable = true;
         libraries = with pkgs; [
             # clangStdenv
-            # ccls
+            # clang
             stdenv.cc.cc
             clang-tools
             lua-language-server
             rustup
         ];
     };
+
+    hardware.xpadneo.enable = true;
 
     # hoping this fixes some app not starting issue
     xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal];
