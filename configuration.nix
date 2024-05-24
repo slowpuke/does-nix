@@ -97,7 +97,9 @@
         enable = true;
         libraries = with pkgs; [
             # clangStdenv
-            ccls
+            # ccls
+            stdenv.cc.cc
+            clang-tools
             lua-language-server
             rustup
         ];

@@ -4,7 +4,7 @@
     home.packages = with pkgs; [
         # clangStdenv
         # llvmPackages.libcxxClang
-        gcc
+        # gcc
         cmake
         rustup
         lua

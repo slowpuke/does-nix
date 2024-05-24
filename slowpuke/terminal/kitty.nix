@@ -3,10 +3,12 @@
 {
     home.packages = with pkgs; [
         kitty
+        kitty-themes
     ];
 
     programs.kitty = {
         enable = true;
+        theme = "Floraverse";
         settings = {
             cursor_shape = "beam";
             cursor_beam_thickness = 3;
@@ -19,6 +21,8 @@
 
             shell_integration = "enabled no-cursor";
             confirm_os_window_close = 0;
+
+            resize_in_steps = "yes";
         };
         keybindings = {
             "ctrl+shift+c" = "copy_to_clipboard";

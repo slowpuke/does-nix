@@ -4,7 +4,7 @@
     programs.zsh = {
         enable = true;
         syntaxHighlighting = {
-            enable = true;
+            enable = false;
             styles = {
                 "alias" = "fg=yellow";
                 "builtin" = "fg=magenta";

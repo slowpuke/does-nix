@@ -32,6 +32,7 @@
         obsidian
         gparted
         unzip
+        fastfetch
     ];
 
     programs.home-manager.enable = true;
