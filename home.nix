@@ -5,9 +5,10 @@
         ./slowpuke/terminal/kitty.nix
         ./slowpuke/terminal/zsh.nix
         ./slowpuke/programming/languages.nix
+        ./slowpuke/rofi/rofi.nix
         ./slowpuke/git.nix
         ./slowpuke/vim.nix
-        ./slowpuke/rofi/rofi.nix
+        ./slowpuke/systemd.nix
     ];
 
     home.username = "slowpuke";
@@ -29,7 +30,6 @@
         spotify
         telegram-desktop
         wine
-        rofi
         obsidian
         gparted
         unzip

@@ -16,6 +16,10 @@
             ssd-update = "lua ~/here/programming/lua-projects/backup-notification/main.lua update";
             lisp = "sbcl --script $1";
             neofetch = "fastfetch";
+            # love-compatibility = ''
+            #     touch .luarc.json
+            #     echo 
+            # '';
         };
         oh-my-zsh = {
             enable = true;

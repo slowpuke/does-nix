@@ -9,6 +9,7 @@
 
         protonup-ng
         gamemode
+        steamtinkerlaunch
 
         duckstation
         pcsx2

@@ -105,13 +105,14 @@
             clang-tools
             lua-language-server
             rustup
+            love
         ];
     };
 
     hardware.xpadneo.enable = true;
 
     # hoping this fixes some app not starting issue
-    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal];
+    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal pkgs.xdg-desktop-portal-gnome ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes"];
 }

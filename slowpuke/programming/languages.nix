@@ -1,13 +1,18 @@
 { config, pkgs, ... }:
 
 {
+    imports = [
+        ./lua-packages.nix
+    ];
+
     home.packages = with pkgs; [
         # clangStdenv
         # llvmPackages.libcxxClang
-        # gcc
+        gcc
         cmake
         rustup
-        lua
+        # lua
+        lua53Packages.lua
         love
         sbcl
         godot_4
