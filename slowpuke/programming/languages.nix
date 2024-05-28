@@ -7,7 +7,6 @@
 
     home.packages = with pkgs; [
         # clangStdenv
-        # llvmPackages.libcxxClang
         gcc
         cmake
         rustup

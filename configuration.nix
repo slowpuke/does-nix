@@ -40,7 +40,11 @@
 
     services.xserver.enable = true;
 
-    services.displayManager.sddm.enable = true;
+    services.displayManager.sddm = {
+        enable = true;
+        theme = "${import ./sddm-theme.nix {inherit pkgs;}}";
+    };
+
     services.xserver.desktopManager.plasma5.enable = true;
 
     services.xserver.xkb = {
@@ -99,13 +103,13 @@
     programs.nix-ld = {
         enable = true;
         libraries = with pkgs; [
-            # clangStdenv
-            # clang
             stdenv.cc.cc
+            # clang
+            clangStdenv
+            # libclang
             clang-tools
             lua-language-server
             rustup
-            love
         ];
     };
 
@@ -113,6 +117,15 @@
 
     # hoping this fixes some app not starting issue
     xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal pkgs.xdg-desktop-portal-gnome ];
+
+    # i would like to delete all but 5, or some other arbitrary number, but the docs seem to be gone, so lookup 
+    # on the internet a solution
+    nix.gc = { 
+        automatic = true; 
+        dates = "weekly"; 
+        # options = "--delete-older-than 30d"; 
+        options = "--delete-older-than +5";
+    };
 
     nix.settings.experimental-features = [ "nix-command" "flakes"];
 }

@@ -17,7 +17,6 @@
 
     home.stateVersion = "23.11";
 
-    # general packages
     home.packages = with pkgs; [
         bottom
         discord
@@ -25,18 +24,22 @@
         gwe
         nerdfonts
         runelite
-        kate
         ripgrep
+        gimp
         spotify
         telegram-desktop
+        # signal
         wine
         obsidian
         gparted
         unzip
         fastfetch
         vlc
+        ldtk    # for 2d level editor for games
     ];
 
+    # gtk.enable = true;
+    # qt.enable = true;
     programs.home-manager.enable = true;
 
 }
