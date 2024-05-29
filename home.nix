@@ -36,6 +36,7 @@
         fastfetch
         vlc
         ldtk    # for 2d level editor for games
+        xclip
     ];
 
     # gtk.enable = true;

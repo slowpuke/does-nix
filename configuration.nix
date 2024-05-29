@@ -43,6 +43,11 @@
     services.displayManager.sddm = {
         enable = true;
         theme = "${import ./sddm-theme.nix {inherit pkgs;}}";
+        settings = {
+            General = { 
+                InputMethod = null; 
+            };
+        };
     };
 
     services.xserver.desktopManager.plasma5.enable = true;
@@ -104,12 +109,11 @@
         enable = true;
         libraries = with pkgs; [
             stdenv.cc.cc
-            # clang
-            clangStdenv
-            # libclang
             clang-tools
             lua-language-server
             rustup
+            # haskellPackages.haskell-language-server
+            # haskellPackages.ghcup     # the package is temporarely broken, try later i guess
         ];
     };
 

@@ -15,6 +15,9 @@
         love
         sbcl
         godot_4
+        ghc
+        cabal-install
+        cabal2nix
 
         # LSPs
         # clang-tools

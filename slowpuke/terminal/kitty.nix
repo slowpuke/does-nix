@@ -22,11 +22,17 @@
             shell_integration = "enabled no-cursor";
             confirm_os_window_close = 0;
 
-            # resize_in_steps = "yes";
+            copy_on_select = false;
         };
         keybindings = {
-            "ctrl+shift+c" = "copy_to_clipboard";
-            "ctrl+shift+v" = "copy_from_clipboard";
+            "ctrl+[" = "copy_to_clipboard";
+            "ctrl+]" = "paste_from_clipboard";
+
+            "ctrl+up" = "scroll_line_up";
+            "ctrl+page_up" = "scroll_page_up";
+            "ctrl+down" = "scroll_line_down";
+            "ctrl+page_down" = "scroll_page_down";
+            "ctrl+end" = "scroll_end";
 
             "ctrl+shift+right" = "next_tab";
             "ctrl+shift+left" = "previous_tab";
