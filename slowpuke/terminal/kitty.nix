@@ -4,6 +4,11 @@
     home.packages = with pkgs; [
         kitty
         kitty-themes
+        bottom
+        ripgrep
+        fzf
+        fastfetch
+        tmux
     ];
 
     programs.kitty = {

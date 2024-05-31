@@ -103,6 +103,8 @@
         nix-ld
         nix-index
         linuxKernel.packages.linux_6_9.xpadneo
+        qt6.qt5compat
+        libsForQt5.qt5ct
     ];
 
     programs.nix-ld = {
@@ -112,7 +114,7 @@
             clang-tools
             lua-language-server
             rustup
-            # haskellPackages.haskell-language-server
+            python3
             # haskellPackages.ghcup     # the package is temporarely broken, try later i guess
         ];
     };

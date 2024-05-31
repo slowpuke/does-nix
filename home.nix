@@ -18,22 +18,20 @@
     home.stateVersion = "23.11";
 
     home.packages = with pkgs; [
-        bottom
         discord
+        keepassxc
         vivaldi
         gwe
         nerdfonts
         runelite
-        ripgrep
         gimp
         spotify
         telegram-desktop
-        # signal
+        signal-desktop
         wine
         obsidian
         gparted
         unzip
-        fastfetch
         vlc
         ldtk    # for 2d level editor for games
         xclip

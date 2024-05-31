@@ -1,14 +1,14 @@
 { pkgs }:
 
 
-# let 
-#     imgLink = "https://github.com/slowpuke/does-nix/blob/main/assets/sddm-background.png";
-#
-#     image = pkgs.fetchurl {
-#         url = imgLink;
-#         sha256 = "sha256-PxMi1h2ZjQk7dzlbPEyn4cBKuJjJu8gRLgfVjQPmfBg=";
-#     };
-# in 
+let 
+    imgLink = "https://github.com/slowpuke/does-nix/blob/main/assets/sddm-background.png";
+
+    image = pkgs.fetchurl {
+        url = imgLink;
+        sha256 = "sha256-PxMi1h2ZjQk7dzlbPEyn4cBKuJjJu8gRLgfVjQPmfBg=";
+    };
+in 
 pkgs.stdenv.mkDerivation  {
   name = "sddm-theme";
   src = pkgs.fetchFromGitHub {
@@ -21,8 +21,8 @@ pkgs.stdenv.mkDerivation  {
         mkdir -p $out
         cp -R ./* $out/
         cd $out/
+        rm Background.jpg
+        cp -r ${image} $out/Background.jpg
    '';
 }
 
-# rm Background.jpg
-# cp -r ${image} $out/Background.jpg
