@@ -19,8 +19,10 @@ in
             ssd-update = "lua ~/here/programming/lua-projects/backup-notification/main.lua update";
             lisp = "sbcl --script $1";
             neofetch = "fastfetch";
-            cd-nix = "cd /home/${username}/does-nix";
-            cd-nvim = "cd /home/${username}/.config/nvim";
+            cdnix = "cd /home/${username}/does-nix";
+            cdnvim = "cd /home/${username}/.config/nvim";
+            # this actually works
+            c-library = "xdg-open https://nixos.wiki/wiki/FAQ/I_installed_a_library_but_my_compiler_is_not_finding_it._Why%3F";
         };
         oh-my-zsh = {
             enable = true;

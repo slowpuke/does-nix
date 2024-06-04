@@ -20,6 +20,8 @@
     hardware.bluetooth.enable = true;
     hardware.bluetooth.powerOnBoot = true;
 
+    services.hardware.openrgb.enable = true;
+
     networking.networkmanager.enable = true;
 
     time.timeZone = "Europe/Rome";
@@ -102,35 +104,38 @@
     environment.systemPackages = with pkgs; [
         nix-ld
         nix-index
+        nix-prefetch-git
         linuxKernel.packages.linux_6_9.xpadneo
-        qt6.qt5compat
-        libsForQt5.qt5ct
+        # libsForQt5.qt5.qtquickcontrols2
+        # libsForQt5.qt5.qtgraphicaleffects
     ];
 
     programs.nix-ld = {
         enable = true;
         libraries = with pkgs; [
             stdenv.cc.cc
-            clang-tools
-            lua-language-server
-            rustup
-            python3
+            # lua-language-server
+            # rustup
+            # python3
+            # gcc
+            # cmake
+            # llvmPackages_18.stdenv
+            # clangStdenv
+            # clang-tools
             # haskellPackages.ghcup     # the package is temporarely broken, try later i guess
         ];
     };
 
+    boot.extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
     hardware.xpadneo.enable = true;
-
-    # hoping this fixes some app not starting issue
-    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal pkgs.xdg-desktop-portal-gnome ];
 
     # i would like to delete all but 5, or some other arbitrary number, but the docs seem to be gone, so lookup 
     # on the internet a solution
     nix.gc = { 
         automatic = true; 
-        dates = "weekly"; 
-        # options = "--delete-older-than 30d"; 
-        options = "--delete-older-than +5";
+        dates = "daily"; 
+        options = "--delete-older-than 30d"; 
+        # options = "--delete-older-than +5";
     };
 
     nix.settings.experimental-features = [ "nix-command" "flakes"];

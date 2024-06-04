@@ -19,7 +19,6 @@
 
     home.packages = with pkgs; [
         discord
-        keepassxc
         vivaldi
         gwe
         nerdfonts
@@ -33,12 +32,9 @@
         gparted
         unzip
         vlc
-        ldtk    # for 2d level editor for games
         xclip
     ];
 
-    # gtk.enable = true;
-    # qt.enable = true;
     programs.home-manager.enable = true;
 
 }

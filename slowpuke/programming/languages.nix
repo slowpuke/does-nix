@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
     imports = [
@@ -6,15 +6,32 @@
     ];
 
     home.packages = with pkgs; [
-        gcc
+        # C
+        # gcc
+        gccMultiStdenv
         cmake
-        rustup
+        clang_18
+        clang-tools_18
+        clangStdenv
+        
+        # lua
         lua53Packages.lua
         love
-        sbcl
+
+        # game making
         godot_4
+        ldtk
+    
+        # haskell
         ghc
         cabal-install
         cabal2nix
+        haskellPackages.lsp
+        # haskellPackages.ghcup     # the package is temporarely broken, try later i guess
+
+        # misc
+        rustup
+        sbcl
+        python3
     ];
 }
