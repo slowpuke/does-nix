@@ -1,7 +1,8 @@
 { pkgs, ... }:
 
 {
-    home.packages = with pkgs; [
+    # home.packages = with pkgs; [
+    environment.systemPackages = with pkgs; [
         lua53Packages.cjson
     ];
 }

@@ -13,6 +13,8 @@
 
         duckstation
         pcsx2
+
+        linuxKernel.packages.linux_6_9.xpadneo
     ];
 
     programs.steam = {
@@ -21,4 +23,6 @@
             proton-ge-bin
         ];
     };
+
+    hardware.xpadneo.enable = true;
 }

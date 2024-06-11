@@ -4,7 +4,7 @@
     imports = [
         ./slowpuke/terminal/kitty.nix
         ./slowpuke/terminal/zsh.nix
-        ./slowpuke/programming/languages.nix
+        # ./slowpuke/programming/languages.nix
         ./slowpuke/rofi/rofi.nix
         ./slowpuke/git.nix
         ./slowpuke/vim.nix
@@ -19,19 +19,20 @@
 
     home.packages = with pkgs; [
         discord
-        vivaldi
-        gwe
-        nerdfonts
-        runelite
         gimp
+        gparted
+        gwe
+        libnotify
+        nerdfonts
+        obsidian
+        runelite
+        signal-desktop
         spotify
         telegram-desktop
-        signal-desktop
-        wine
-        obsidian
-        gparted
         unzip
+        vivaldi
         vlc
+        wine
         xclip
     ];
 
