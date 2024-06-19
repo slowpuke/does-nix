@@ -52,7 +52,7 @@
             };
         };
     };
-
+    services.xserver.windowManager.bspwm.enable = true;
     services.xserver.desktopManager.plasma5.enable = true;
 
     services.xserver.xkb = {
@@ -102,31 +102,11 @@
         package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
 
-    # TODO: maybe move the xpadneo stuff to gaming.nix since it's more appropriate
-    # and it imports here anyways
     environment.systemPackages = with pkgs; [
         nix-ld
         nix-index
         nix-prefetch-git
-        # linuxKernel.packages.linux_6_9.xpadneo
     ];
-
-    # hardware.xpadneo.enable = true;
-
-    # TODO: both nix-ld and the environment variables can be moved to 
-    # languages.nix since it will be imported here anyways
-    # programs.nix-ld = {
-    #     enable = true;
-    #     libraries = with pkgs; [
-    #         stdenv.cc.cc
-    #      ];
-    # };
-    # environment.variables = { 
-    #     PATH = "${pkgs.clang-tools}/bin:$PATH"; 
-    #     # the vulkan thing is fucked, the nix shell in the demo project actually works but I don't know why
-    #     # i guess try to emulate everything the nix shell does...
-    #     # VULKAN_SDK = "${pkgs.vulkan-headers}";
-    # };
 
     # i would like to delete all but 5, or some other arbitrary number, but the docs seem to be gone, so lookup 
     # on the internet a solution

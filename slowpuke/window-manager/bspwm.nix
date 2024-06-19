@@ -1,16 +1,22 @@
 { config, pkgs, ... }:
 
+# TODO: 125% fractional scaling, see how you can do that
+
+# TODO: big problem, vivaldi forgets everything when switching to bspwm, maybe disabling plasma could help
+# but i wouldnt count on it too much. This might be another thread on reddit, however i think this time it can
+# be solved with the help of the bspwm community, so look for generic terms like "vivaldi doesnt save passowrds with bspwm"
 {
     home.packages = with pkgs; [
         bspwm
         sxhkd
-        nitrogen
+        # nitrogen
+        feh
         picom
+        dunst
         lxde.lxsession
     ];
 
-    # remember to enable bspwm in configuration.nix as well, i think
-    programs.bspwm = {
+    xsession.windowManager.bspwm = {
         enable = true;
         # these should work, but are the example options of bspwm, customize when everything works
         settings = { 
@@ -19,14 +25,22 @@
             split_ratio = 0.52;
             borderless_monocle = true;
         };
+        # maybe the feh command for wallpaper too
+        startupPrograms = [ 
+            "picom" 
+            "pgrep -x sxhkd > /dev/null || sxhkd" 
+            "xsetroot -cursor_name left_ptr" 
+            "dunst -config $HOME/.config/dunst/dunstrc" 
+            "sleep 2; polybar -q bar" 
+        ];
     };
 
-    programs.sxhkd = {
+    services.sxhkd = {
         enable = true;
-        keybinding = {
-            # i have no idea if those work
-            "super + Return" = pkgs.kitty;
-            "super + space" = "rofi -show run";
+        keybindings = {
+            "super + Return" = "kitty";
+            "super + space" = "rofi -show drun";
+            "super + escape" = "rofi -show power-menu";
         };
     };
 }

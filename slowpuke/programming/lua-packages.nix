@@ -1,10 +1,12 @@
 { pkgs, ... }:
 
 {
-    # home.packages = with pkgs; [
     environment.systemPackages = with pkgs; [
-        lua53Packages.cjson
+        (lua5_3.withPackages(ps: with ps; [
+            busted
+            cjson
+            luafilesystem 
+        ]))
     ];
 }
 
-# https://github.com/NixOS/nixpkgs/blob/master/doc/languages-frameworks/lua.section.md

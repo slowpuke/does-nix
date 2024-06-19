@@ -1,34 +1,32 @@
-{ conig, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
     home.packages = with pkgs; [
-        neovim
+        # neovim
         vim
         kate
     ];
 
-    programs.vim = {
-        enable = false;
-        defaultEditor = true;
-        extraConfig = ''
-            set encoding=utf-8
-            set belloff=all
-            set noerrorbells
-            set tabstop=4 softtabstop=4
-            set shiftwidth=4
-            set expandtab
-            set smartindent
-            set hidden
-            set noswapfile
-            set nobackup
-            set undodir=~/.vim/undodir
-            set undofile
-            set incsearch
-            set signcolumn=yes
-            set relativenumber
-            set number
-            set cursorline
-            set guicursor+=a:blinkon0
-        '';
+    # lets see if this works...
+    # if this works then i think i can make the languages home again
+
+    # at this point im thinking about making a nvim.nix file and doing a hybrid liking to the single files
+    # while managing the plugins with nix
+    programs.neovim = {
+        enable = true;
+
+        withNodeJs = true;
+        withPython3 = true;
+        withRuby = true;
+
+        extraPackages = with pkgs; [
+            libclang
+        ];
+    };
+
+    xdg.configFile = {
+        "nvim" = {
+            source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nvim/";
+        };
     };
 }
