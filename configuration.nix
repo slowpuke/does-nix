@@ -3,7 +3,6 @@
 {
     imports = [
         ./hardware-configuration.nix
-        ./slowpuke/gaming.nix   # steam needs to be system wide app to be configured
         ./slowpuke/programming/languages.nix
     ];
 
@@ -106,7 +105,10 @@
         nix-ld
         nix-index
         nix-prefetch-git
+        linuxKernel.packages.linux_6_9.xpadneo
     ];
+
+    hardware.xpadneo.enable = true;
 
     # i would like to delete all but 5, or some other arbitrary number, but the docs seem to be gone, so lookup 
     # on the internet a solution

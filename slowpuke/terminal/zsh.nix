@@ -1,8 +1,5 @@
-{ config, ... }:
+{ config, lib, ... }:
 
-let
-    username = "slowpuke";
-in
 {
     programs.zsh = {
         enable = true;
@@ -16,13 +13,10 @@ in
         };
         shellAliases = {
             pg = "bash ~/here/programming/bash/password-generator";
-            ssd-update = "lua ~/here/programming/lua-projects/backup-notification/main.lua update";
+            ssd-update = "${config.home.homeDirectory}/does-nix/scripts/ssd-backup-notification/ssd-backup-notif update";
             lisp = "sbcl --script $1";
-            neofetch = "fastfetch";
-            cdnix = "cd /home/${username}/does-nix";
-            cdnvim = "cd /home/${username}/.config/nvim";
-            # this actually works
-            # c-library = "xdg-open https://nixos.wiki/wiki/FAQ/I_installed_a_library_but_my_compiler_is_not_finding_it._Why%3F";
+            cdnix = "cd ${config.home.homeDirectory}/does-nix";
+            cdnvim = "cd ${config.home.homeDirectory}/.config/nvim";
         };
         oh-my-zsh = {
             enable = true;
@@ -39,4 +33,3 @@ in
         };
     };
 }
-

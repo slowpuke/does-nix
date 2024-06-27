@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-    environment.systemPackages = with pkgs; [
+    home.packages = with pkgs; [
         steam
         heroic
         prismlauncher
@@ -13,16 +13,5 @@
 
         duckstation
         pcsx2
-
-        linuxKernel.packages.linux_6_9.xpadneo
     ];
-
-    programs.steam = {
-        enable = true;
-        extraCompatPackages = with pkgs; [
-            proton-ge-bin
-        ];
-    };
-
-    hardware.xpadneo.enable = true;
 }

@@ -26,13 +26,14 @@
             borderless_monocle = true;
         };
         # maybe the feh command for wallpaper too
-        startupPrograms = [ 
-            "picom" 
-            "pgrep -x sxhkd > /dev/null || sxhkd" 
-            "xsetroot -cursor_name left_ptr" 
-            "dunst -config $HOME/.config/dunst/dunstrc" 
-            "sleep 2; polybar -q bar" 
-        ];
+        # startupPrograms = [ 
+        #     "picom" 
+        #     "pgrep -x sxhkd > /dev/null || sxhkd" 
+        #     "pkill kdewallet5"  # maybe this will resolve the password issue, alternative killall kdewallet5 if the first one doesnt work
+        #     "xsetroot -cursor_name left_ptr" 
+        #     "dunst -config $HOME/.config/dunst/dunstrc" 
+        #     "sleep 2; polybar -q bar" 
+        # ];
     };
 
     services.sxhkd = {

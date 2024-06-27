@@ -1,5 +1,7 @@
 { pkgs, ... }:
 
+# TODO: if the lua packages work with home manager just transfer them into home manager, just like you did with gaming
+# just move nix-ld and the env variable into configuration.nix
 {
     imports = [
         ./lua-packages.nix
@@ -8,23 +10,16 @@
 
     environment = { 
         systemPackages = with pkgs; [
-            # c
             gcc
             clang
             clang-tools
-            libclang
             cmake
+            bear
+            ninja
 
-            # lua
             lua53Packages.lua
             love
 
-            # game making
-            # TODO: maybe move this from here? maybe into a game making file, or even better into home.nix
-            godot_4
-            ldtk
-
-            # haskell
             ghc
             cabal-install
             cabal2nix
@@ -33,11 +28,9 @@
 
             rustup
             sbcl
-            python3
             nodePackages.bash-language-server
-            nixfmt-classic
         ]; 
-        variables.PATH = "${pkgs.clang-tools}/bin:$PATH";
+        # variables.PATH = "${pkgs.clang-tools}/bin:$PATH";
     };
 
     programs.nix-ld = {
@@ -46,9 +39,4 @@
             stdenv.cc.cc
          ];
     };
-
-    # TODO: so, maybe try this? add a clangd package that could help or something
-    # also maybe this thread can help, read all the comments -- https://old.reddit.com/r/NixOS/comments/1b0zztw/keeping_lua_neovim_config_while_using_nix/
-    # programs.neovim.enable = true;
-    # also move this from here, into an appropriate file
 }

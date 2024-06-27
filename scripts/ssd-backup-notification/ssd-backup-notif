@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+current_unix_date=$( date +%s )
+
+if [[ $1 = "update" ]]; then
+    > ~/does-nix/scripts/ssd-backup-notification/date
+    echo $current_unix_date >> ~/does-nix/scripts/ssd-backup-notification/date
+fi
+
+last_update=$( cat ~/does-nix/scripts/ssd-backup-notification/date )
+human_readable_last_update=$( date -d "@$last_update" +'%d/%m/%Y' )
+if (( $current_unix_date - $last_update > 2592000 )); then
+    notify-send -u critical --app-name "Backup Notification" "SSD Backup" "It has been $(( last_update/60/60/24 )) days since the last backup. 
+    The last backup was on ${human_readable_last_update}."
+fi
+

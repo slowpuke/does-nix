@@ -5,9 +5,9 @@
         kitty
         kitty-themes
         bottom
-        ripgrep
         fzf
-        fastfetch
+        neofetch
+        ripgrep
         tmux
     ];
 
