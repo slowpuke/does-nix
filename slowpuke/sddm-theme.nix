@@ -1,6 +1,5 @@
 { pkgs }:
 
-
 let 
     imgLink = "https://raw.githubusercontent.com/slowpuke/does-nix/main/assets/sddm-background.png";
     image = pkgs.fetchurl {

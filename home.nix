@@ -21,13 +21,16 @@
 
     home.packages = with pkgs; [
         aseprite
-        discord
+        bitwarden-desktop
+        bitwarden-cli
+        # discord
         dolphin
         gimp
         godot_4
         gparted
         gwe
         kate
+        ladybird
         ldtk
         libnotify
         nerdfonts

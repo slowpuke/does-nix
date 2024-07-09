@@ -22,10 +22,10 @@ configuration {
   padding: 0;
   spacing: 0;
 
-  bg: #18181B;
-  bg-alt: #20212C;
-  fg: #A0A0AB;
-  fg-alt: #5D5E72;
+  bg: #000000;
+  bg-alt: #340034;
+  fg: #ffff70;
+  fg-alt: #340034;
 
   background-color: @bg;
   text-color: @fg-alt;
@@ -33,7 +33,7 @@ configuration {
 
 window {
   border: 2px;
-  border-color: @fg-alt;
+  border-color: @bg-alt;
   padding: 6px;
   transparency: "real";
 }
@@ -57,7 +57,7 @@ listview {
 
 scrollbar {
   background-color: @bg-alt;
-  handle-color: @fg;
+  handle-color: #451239;
   margin: 0 0 0 6px;
 }
 

@@ -11,8 +11,8 @@
                 rofi-power-menu
             ]; 
         };
-        # theme by Murzchnvok
-        # https://github.com/Murzchnvok/rofi-collection
+        # theme by Murzchnvok -- https://github.com/Murzchnvok/rofi-collection
+        # with change colors
         theme = ./murz.rasi;
         terminal = "${pkgs.kitty}/bin/kitty";
         extraConfig = {
