@@ -3,7 +3,6 @@
 {
     imports = [
         ./hardware-configuration.nix
-        ./slowpuke/programming/languages.nix
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_6_9;
@@ -107,6 +106,13 @@
         nix-prefetch-git
         linuxKernel.packages.linux_6_9.xpadneo
     ];
+
+    programs.nix-ld = {
+        enable = true;
+        libraries = with pkgs; [
+            stdenv.cc.cc
+         ];
+    };
 
     hardware.xpadneo.enable = true;
 

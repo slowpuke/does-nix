@@ -9,6 +9,7 @@
         ./slowpuke/nvim.nix
         ./slowpuke/gaming.nix
         ./slowpuke/systemd.nix
+        ./slowpuke/programming/languages.nix
         # ./slowpuke/window-manager/bspwm.nix
         # ./slowpuke/window-manager/polybar.nix
     ];
@@ -22,7 +23,6 @@
     home.packages = with pkgs; [
         aseprite
         bitwarden-desktop
-        bitwarden-cli
         # discord
         dolphin
         gimp
@@ -30,7 +30,6 @@
         gparted
         gwe
         kate
-        ladybird
         ldtk
         libnotify
         nerdfonts

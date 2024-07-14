@@ -24,11 +24,11 @@ configuration {
 
   bg: #000000;
   bg-alt: #340034;
-  fg: #ffff70;
+  fg: #000000;
   fg-alt: #340034;
 
   background-color: @bg;
-  text-color: @fg-alt;
+  text-color: #451239;
 }
 
 window {
