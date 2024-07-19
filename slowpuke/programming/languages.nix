@@ -18,8 +18,10 @@
         haskellPackages.lsp
         # haskellPackages.ghcup     # the package is temporarely broken, try later i guess
 
-        rustup
         sbcl
+        roswell
+
+        rustup
         nodePackages.bash-language-server
     ];
 }

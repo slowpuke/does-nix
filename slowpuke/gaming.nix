@@ -11,6 +11,8 @@
         gamemode
         steamtinkerlaunch
 
+        r2modman
+
         duckstation
         pcsx2
     ];

@@ -23,6 +23,7 @@
     home.packages = with pkgs; [
         aseprite
         bitwarden-desktop
+        bottles
         # discord
         dolphin
         gimp
