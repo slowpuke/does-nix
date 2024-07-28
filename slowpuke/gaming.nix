@@ -7,6 +7,8 @@
         prismlauncher
         openmw
 
+        path-of-building
+
         protonup-ng
         gamemode
         steamtinkerlaunch

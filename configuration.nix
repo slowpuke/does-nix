@@ -111,6 +111,11 @@
         enable = true;
         libraries = with pkgs; [
             stdenv.cc.cc
+            xorg.libX11
+            xorg.libXcursor
+            xorg.libxcb
+            xorg.libXi
+            libxkbcommon
          ];
     };
 

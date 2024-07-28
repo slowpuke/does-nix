@@ -18,6 +18,9 @@
             cdnix = "cd ${config.home.homeDirectory}/does-nix";
             cdnvim = "cd ${config.home.homeDirectory}/.config/nvim";
         };
+        envExtra = "
+            export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
+        ";
         oh-my-zsh = {
             enable = true;
             theme = "half-life";

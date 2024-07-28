@@ -33,6 +33,7 @@
         kate
         ldtk
         libnotify
+        libreoffice-qt
         nerdfonts
         obsidian
         runelite    # move to gaming.nix
