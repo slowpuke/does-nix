@@ -22,6 +22,8 @@
         roswell
 
         rustup
+        # wgpu-utils
+        jdk
         nodePackages.bash-language-server
     ];
 }

@@ -5,7 +5,7 @@
         ./hardware-configuration.nix
     ];
 
-    boot.kernelPackages = pkgs.linuxPackages_6_9;
+    boot.kernelPackages = pkgs.linuxPackages_6_6;
 
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
@@ -86,6 +86,7 @@
         enable = true;
         driSupport = true;
         driSupport32Bit = true;
+        extraPackages = [ pkgs.mesa.drivers ];
     };
 
     services.xserver.videoDrivers = ["nvidia"];
@@ -104,7 +105,10 @@
         nix-ld
         nix-index
         nix-prefetch-git
-        linuxKernel.packages.linux_6_9.xpadneo
+        linuxKernel.packages.linux_6_6.xpadneo
+        linux-firmware
+        mesa
+        # glxinfo
     ];
 
     programs.nix-ld = {
@@ -116,6 +120,11 @@
             xorg.libxcb
             xorg.libXi
             libxkbcommon
+            # glslang
+            vulkan-headers
+            vulkan-loader
+            vulkan-tools
+            vulkan-validation-layers
          ];
     };
 

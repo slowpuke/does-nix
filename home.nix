@@ -21,31 +21,38 @@
     home.stateVersion = "23.11";
 
     home.packages = with pkgs; [
-        aseprite
+        # aseprite  # install only if necessary cause you have to build it from source
+        chatterino2
         bitwarden-desktop
+        # bitwarden-cli
         bottles
         # discord
         dolphin
         gimp
         godot_4
-        gparted
-        gwe
-        kate
+        # gparted
+        # gwe
+        # kate
+        # keybase
+        # keybase-gui
         ldtk
         libnotify
         libreoffice-qt
         nerdfonts
         obsidian
+        opentabletdriver
         runelite    # move to gaming.nix
         signal-desktop
         spotify
         telegram-desktop
+        tor-browser
         unzip
         vivaldi
         vlc
         wine
         xclip
         yt-dlp
+        wacomtablet
     ];
 
     programs.home-manager.enable = true;
