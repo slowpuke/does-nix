@@ -109,6 +109,8 @@
         linux-firmware
         mesa
         # glxinfo
+        cups
+        hplip
     ];
 
     programs.nix-ld = {

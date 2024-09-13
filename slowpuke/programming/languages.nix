@@ -24,6 +24,9 @@
         rustup
         # wgpu-utils
         jdk
+        java-language-server
+        jdt-language-server
+        maven
         nodePackages.bash-language-server
     ];
 }

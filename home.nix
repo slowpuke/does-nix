@@ -35,13 +35,13 @@
         # kate
         # keybase
         # keybase-gui
+        krita
         ldtk
         libnotify
         libreoffice-qt
         nerdfonts
         obsidian
         opentabletdriver
-        runelite    # move to gaming.nix
         signal-desktop
         spotify
         telegram-desktop
@@ -53,6 +53,7 @@
         xclip
         yt-dlp
         wacomtablet
+        weechat
     ];
 
     programs.home-manager.enable = true;

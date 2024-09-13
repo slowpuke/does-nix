@@ -6,8 +6,9 @@
         heroic
         prismlauncher
         openmw
+        runelite
 
-        path-of-building
+        # path-of-building
 
         protonup-ng
         gamemode
