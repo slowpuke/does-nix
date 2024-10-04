@@ -106,27 +106,15 @@
         nix-index
         nix-prefetch-git
         linuxKernel.packages.linux_6_6.xpadneo
-        linux-firmware
-        mesa
+        # linux-firmware
+        # mesa
         # glxinfo
-        cups
-        hplip
     ];
 
     programs.nix-ld = {
         enable = true;
         libraries = with pkgs; [
             stdenv.cc.cc
-            xorg.libX11
-            xorg.libXcursor
-            xorg.libxcb
-            xorg.libXi
-            libxkbcommon
-            # glslang
-            vulkan-headers
-            vulkan-loader
-            vulkan-tools
-            vulkan-validation-layers
          ];
     };
 

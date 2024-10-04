@@ -8,8 +8,6 @@
         openmw
         runelite
 
-        # path-of-building
-
         protonup-ng
         gamemode
         steamtinkerlaunch
@@ -18,5 +16,9 @@
 
         duckstation
         pcsx2
+        snes9x
+        
+        gzdoom
+        # slade
     ];
 }

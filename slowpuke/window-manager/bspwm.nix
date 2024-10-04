@@ -17,7 +17,6 @@
         sxhkd
         # nitrogen
         feh
-        # picom
         dunst
         lxde.lxsession
     ];
@@ -36,11 +35,11 @@
         };
         # maybe the feh command for wallpaper too
         startupPrograms = [ 
-            # "picom" 
             "pgrep -x sxhkd > /dev/null || sxhkd" 
             "pkill kdewallet5"  # maybe this will resolve the password issue, alternative killall kdewallet5 if the first one doesnt work
             "xsetroot -cursor_name left_ptr" 
-            "dunst -config $HOME/.config/dunst/dunstrc" 
+            "dunst -config $HOME/.config/dunst/dunstrc"     # theres no dunstrc, but you can enable and customize it through home manager, dont
+                                                            # know if this line will still be in here, i guess yes cause polybar is here too
             "feh -w $HOME/does-nix/assets/wallapaper.jpg"
             "sleep 2; polybar -q bar" 
         ];
@@ -57,8 +56,8 @@
             "super + escape" = "rofi -show power-menu";
             "super + shift + escape" = "bspc wm -r";                                                        # restarts bspwm
             "super + q" = "bpsc node -c";                                                                   # kills window
-            "super + {h,j,k,l}" = "bspc node -f {west,south,north,east}";
-            "super + w + {0-9}" = "bspc node -d {0-9}";                                                     # send window to desktop
+            "super + {h,j,k,l}" = "bspc node -f {west,south,north,east}";                                   # move window
+            "super + d + {0-9}" = "bspc node -d {0-9}";                                                     # send window to desktop
             "super + m + {0-9}" = "bspc node -d {0-9} && bspc desktop -f {0-9}";                            # send window and move to desktop
             "super + button3" = "bspc node focused.tiled -t floating || bspc node focused.tiled -t tiled";  # im not sure if button3 will work for middle mouse button
             "super + shift + {h,j,k,l}" = "bspc node -s {west,south,north,east}";                           # swap windows
