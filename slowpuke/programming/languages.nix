@@ -6,12 +6,12 @@
         # ./lisp-packages.nix
     ];
 
-    home.packages = with pkgs; [ (hiPrio gcc)
-        gcc
-        clang
-        clang-tools
-        cmake
-        conan
+    home.packages = with pkgs; [ # (hiPrio gcc)
+        # gcc
+        # clang
+        # clang-tools
+        # cmake
+        # conan
 
         # ghc
         # cabal-install
@@ -19,12 +19,12 @@
         # haskellPackages.lsp
         # haskellPackages.ghcup     # the package is temporarely broken, try later i guess
 
-        sbcl
-        roswell
+        # sbcl
+        # roswell
 
         # gnu-cobol
 
-        rustc
+        # rustc
         cargo
 
         nodePackages.bash-language-server

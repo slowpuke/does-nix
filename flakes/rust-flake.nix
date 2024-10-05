@@ -13,6 +13,14 @@
             buildInputs = with pkgs; [
                 rustc
             ];
+
+            packages = with pkgs; [
+
+            ];
+
+            shellHook = ''
+
+            '';
         };
     };
 }

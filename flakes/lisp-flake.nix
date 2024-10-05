@@ -12,6 +12,7 @@
         devShells."x86_64-linux".default = pkgs.mkShell {
             buildInputs = with pkgs; [
                 sbcl
+                roswell
             ];
             
             # i dont know if this works, if it does good

@@ -14,6 +14,10 @@
                 
             ];
 
+            packages = with pkgs; [
+
+            ];
+
             shellHook = ''
 
             '';
