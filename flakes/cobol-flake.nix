@@ -1,43 +1,26 @@
-# https://github.com/rupurt/gnu-cobol-nix
-
 {
-  description = "Your nix flake with GnuCOBOL. Hack the planet!";
-
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
-    gnu-cobol= {
-      url = "github:rupurt/gnu-cobol-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+    description = "A very basic flake";
+    inputs = {
+        nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     };
-  };
 
-  outputs = {
-    flake-utils,
-    gnu-cobol,
-    nixpkgs,
-    ...
-  }: let
-    systems = ["x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin"];
-    outputs = flake-utils.lib.eachSystem systems (system: let
-      pkgs = import nixpkgs {
-        overlays = [
-          gnu-cobol.overlay
-        ];
-      };
-    in {
-      # nix fmt
-      formatter = pkgs.alejandra;
+    outputs = { self, nixpkgs }:
+    let
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+    in
+    {
+        devShells."x86_64-linux".default = pkgs.mkShell {
+            buildInputs = with pkgs; [
+                gnu-cobol.bin
+            ];
 
-      # nix develop -c $SHELL
-      devShells.default = pkgs.mkShell {
-        name = "default dev shell";
+            packages = with pkgs; [
 
-        packages = with pkgs; [
-          gnu-cobol-pkgs.gnu-cobol.bin
-        ];
-      };
-    });
-  in
-    outputs;
+            ];
+
+            shellHook = ''
+
+            '';
+        };
+    };
 }

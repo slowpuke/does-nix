@@ -9,6 +9,7 @@
                 "alias" = "fg=magenta";
                 "builtin" = "fg=magenta";
                 "command" = "fg=magenta";
+                "function" = "fg=magenta";
             };
         };
         shellAliases = {
@@ -16,15 +17,12 @@
             lisp = "sbcl --script $1";
             cdnix = "cd ${config.home.homeDirectory}/does-nix";
             cdnvim = "cd ${config.home.homeDirectory}/.config/nvim";
-
-            # aliases to create a nix shell file in current directory
-            blankshell = "cp ${config.home.homeDirectory}/does-nix/flakes/blank-flake.nix ./flake.nix";
-            luashell = "cp ${config.home.homeDirectory}/does-nix/flakes/lua-flake.nix ./flake.nix";
-            cobolshell = "cp ${config.home.homeDirectory}/does-nix/flakes/cobol-flake.nix ./flake.nix";
-            cshell = "cp ${config.home.homeDirectory}/does-nix/flakes/c-flake.nix ./flake.nix";
-            rustshell = "cp ${config.home.homeDirectory}/does-nix/flakes/rust-flake.nix ./flake.nix";
-            lispshell = "cp ${config.home.homeDirectory}/does-nix/flakes/lisp-flake.nix ./flake.nix";
         };
+        initExtra = "
+            mkshell () {
+                cp ~/does-nix/flakes/$1-flake.nix ./flake.nix
+            }
+        ";
         envExtra = "
             export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
         ";
