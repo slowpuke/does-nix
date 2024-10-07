@@ -13,7 +13,7 @@
 
     programs.kitty = {
         enable = true;
-        theme = "Floraverse";
+        themeFile = "Floraverse";
         settings = {
             cursor_shape = "beam";
             cursor_beam_thickness = 3;
