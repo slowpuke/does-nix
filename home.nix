@@ -24,24 +24,30 @@
         # aseprite  # install only if necessary cause you have to build it from source
         chatterino2
         bitwarden-desktop
-        # bitwarden-cli
         bottles
         # discord
+        (discord.override {
+            withVencord = true;
+        })
         dolphin
+        ffmpeg
         gimp
         godot_4
         # gparted
         # gwe
-        # kate
         # keybase
         # keybase-gui
         krita
+        helvum
         ldtk
         libnotify
         libreoffice-qt
         nerdfonts
         obsidian
-        opentabletdriver
+        # opentabletdriver
+        pavucontrol
+        qjackctl
+        rnote
         signal-desktop
         spotify
         telegram-desktop
@@ -53,7 +59,7 @@
         xclip
         yt-dlp
         wacomtablet
-        weechat
+        vesktop
     ];
 
     programs.home-manager.enable = true;

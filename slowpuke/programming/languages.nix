@@ -26,7 +26,7 @@
 
         # rustc
         cargo
-
+        nil
         nodePackages.bash-language-server
     ];
 }

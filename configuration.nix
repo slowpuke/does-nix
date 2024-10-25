@@ -52,6 +52,7 @@
     };
     services.xserver.windowManager.bspwm.enable = true;
     services.xserver.desktopManager.plasma5.enable = true;
+    # services.desktopManager.plasma6.enable = true;
 
     services.xserver.xkb = {
         layout = "pl";
@@ -71,6 +72,7 @@
         alsa.enable = true;
         alsa.support32Bit = true;
         pulse.enable = true;
+        jack.enable = true;     # will this work? if it does then install qjackctl
     };
 
     users.users.slowpuke = {

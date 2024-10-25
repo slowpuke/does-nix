@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-# this script downloads the videos from the real music playlist and saves them locally in the here/realmusic directory, it's for anacron
-
-# set -e
-yt-dlp -f best --format mp4 --download-archive /home/slowpuke/here/real-music/archive.txt -o '/home/slowpuke/here/real-music/%(title)s by %(uploader)s.%(ext)s' 'https://www.youtube.com/playlist?list=PL-ayPFT948YvyZNU6K2DTjXjc_MM2uk5i'
-# exit 0

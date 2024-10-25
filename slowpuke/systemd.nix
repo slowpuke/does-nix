@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
     systemd.user.services = {
@@ -18,15 +18,12 @@
                 WantedBy = [ "graphical-session.target" ];
             };
         };
-        real_music_backup = {
+        videos-backup = {
             Unit = {
-                Description = "An automatic backup of the real music YouTube playlist";
+                Description = "An automatic backup of the important YouTube videos";
             };
             Service = {
-                Type = "oneshot";
-                ExecStart = ''${config.home.homeDirectory}/does-nix/scripts/real-music-backup'';
-                Restart = "on-failure";
-                RestartSec = 5;
+                ExecStart = ''${config.home.homeDirectory}/does-nix/scripts/videos-backup'';
             };
             Install = {
                 WantedBy = [ "multi-user.target" ];

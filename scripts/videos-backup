@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+yt-dlp -f bestvideo+bestaudio --download-archive /home/slowpuke/here/real-music/archive.txt -o '/home/slowpuke/here/real-music/%(title)s by %(uploader)s.%(ext)s' 'https://www.youtube.com/playlist?list=PL-ayPFT948YvyZNU6K2DTjXjc_MM2uk5i'
+echo "-----real music backup complete-----"
+
+yt-dlp -f bestvideo+bestaudio --download-archive /home/slowpuke/here/videos/archiveyt/archive.txt -o '/home/slowpuke/here/videos/archiveyt/%(title)s by %(uploader)s.%(ext)s' 'https://youtube.com/playlist?list=PL-ayPFT948YvcggnilQwo5GL4dBiKEKJx&si=Dd2mLR76NrgI'
+echo "-----youtube archive backup complete-----"

@@ -18,7 +18,7 @@
         pcsx2
         snes9x
         
-        gzdoom
+        # gzdoom
         # slade
     ];
 }
