@@ -1,8 +1,9 @@
 { config, ... }:
 
 {
+    # systemd.user.enable = true;
     systemd.user.services = {
-        backup_notif = {
+        backup-notif = {
             Unit = {
                 Description = "A system notification that reminds of the manual backup of the personal files";
                 After = [ "graphical-session-pre.target" ];
@@ -23,10 +24,13 @@
                 Description = "An automatic backup of the important YouTube videos";
             };
             Service = {
+                Type = "oneshot";
                 ExecStart = ''${config.home.homeDirectory}/does-nix/scripts/videos-backup'';
+                Restart = "on-failure";
+                RestartSec = 5;
             };
             Install = {
-                WantedBy = [ "multi-user.target" ];
+                WantedBy = [ "default.target" ];
             };
         };
     };

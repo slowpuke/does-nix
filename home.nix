@@ -10,8 +10,8 @@
         ./slowpuke/gaming.nix
         ./slowpuke/systemd.nix
         ./slowpuke/programming/languages.nix
-        # ./slowpuke/window-manager/bspwm.nix
-        # ./slowpuke/window-manager/polybar.nix
+        ./slowpuke/window-manager/bspwm.nix
+        ./slowpuke/window-manager/polybar.nix
     ];
 
     home.username = "slowpuke";
