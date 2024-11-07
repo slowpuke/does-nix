@@ -29,7 +29,7 @@
         };
         # these should work, but are the example options of bspwm, customize when everything works
         settings = { 
-            border_width = 10; 
+            border_width = 4; 
             window_gap = 12;
             split_ratio = 0.52;
             borderless_monocle = true;
@@ -38,12 +38,12 @@
         startupPrograms = [ 
             # "pgrep -x sxhkd > /dev/null || sxhkd" 
             "pkill picom"
-            "pkill kdewallet5"  # maybe this will resolve the password issue, alternative killall kdewallet5 if the first one doesnt work
             "xsetroot -cursor_name left_ptr" 
             # "dunst -config $HOME/.config/dunst/dunstrc"     # theres no dunstrc, but you can enable and customize it through home manager, dont
                                                             # know if this line will still be in here, i guess yes cause polybar is here too
             "feh --bg-fill $HOME/does-nix/assets/wallpaper.jpg"
-            # "sleep 2; polybar -q bar" 
+            # "polybar"
+            "sleep 2; polybar -q bar" 
         ];
         monitors = {
 
@@ -57,7 +57,7 @@
             "super + space" = "rofi -show drun";
             "super + escape" = "rofi -show power-menu";                                                     #!
             "super + shift + escape" = "bspc wm -r";                                                        # restarts bspwm
-            "super + q" = "bpsc node -c";                                                                   #! kills window
+            "super + q" = "bspc node -c";                                                                   #! kills window
             "super + {h,j,k,l}" = "bspc node -f {west,south,north,east}";                                   # move window
             "super + d + {0-9}" = "bspc node -d {0-9}";                                                     # send window to desktop
             "super + m + {0-9}" = "bspc node -d {0-9} && bspc desktop -f {0-9}";                            # send window and move to desktop

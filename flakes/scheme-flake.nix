@@ -1,5 +1,5 @@
 {
-    description = "A very basic flake";
+    description = "A flake for Guile Scheme";
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     };
@@ -11,16 +11,17 @@
     {
         devShells."x86_64-linux".default = pkgs.mkShell {
             buildInputs = with pkgs; [
-
+                guile
+                guix
             ];
 
-            packages = with pkgs; [
+            packages = with pkgs.guix; [
 
             ];
 
             shellHook = ''
 
-                '';
+            '';
         };
     };
 }
