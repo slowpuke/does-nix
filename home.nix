@@ -21,7 +21,7 @@
     home.stateVersion = "23.11";
 
     home.packages = with pkgs; [
-        # aseprite  # install only if necessary cause you have to build it from source
+        aseprite  # install only if necessary cause you have to build it from source
         chatterino2
         bitwarden-desktop
         bottles
@@ -35,6 +35,7 @@
         godot_4
         # gparted
         # gwe
+        kid3
         # keybase
         # keybase-gui
         krita
@@ -42,6 +43,7 @@
         ldtk
         libnotify
         libreoffice-qt
+        librewolf
         nerdfonts
         obsidian
         # opentabletdriver
@@ -50,6 +52,8 @@
         rnote
         signal-desktop
         spotify
+        strawberry
+        tauon
         telegram-desktop
         tor-browser
         unzip
