@@ -9,6 +9,7 @@
 
 configuration {
   font: "Iosevka Nerd Font Medium 12";
+  // font: "Garamond";
 
   timeout {
     delay: 10;

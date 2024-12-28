@@ -44,7 +44,6 @@
         libnotify
         libreoffice-qt
         librewolf
-        nerdfonts
         obsidian
         # opentabletdriver
         pavucontrol
@@ -52,18 +51,17 @@
         rnote
         signal-desktop
         spotify
-        strawberry
+        # strawberry
         tauon
         telegram-desktop
-        tor-browser
+        tiled
         unzip
-        vivaldi
+        # vivaldi
         vlc
         wine
         xclip
         yt-dlp
         wacomtablet
-        vesktop
     ];
 
     programs.home-manager.enable = true;

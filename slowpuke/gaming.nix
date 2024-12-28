@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
     home.packages = with pkgs; [
@@ -10,16 +10,16 @@
 
         protonup-ng
         gamemode
-        steamtinkerlaunch
 
         r2modman
+        nexusmods-app
 
         duckstation
         pcsx2
+        rpcs3
         snes9x
         
         gzdoom
-        # slade
         eureka-editor
     ];
 }

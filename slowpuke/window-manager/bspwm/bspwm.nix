@@ -2,15 +2,9 @@
 
 # TODO: 125% fractional scaling, see how you can do that
 
-# TODO: big problem, vivaldi forgets everything when switching to bspwm, maybe disabling plasma could help
-# but i wouldnt count on it too much. This might be another thread on reddit, however i think this time it can
-# be solved with the help of the bspwm community, so look for generic terms like "vivaldi doesnt save passowrds with bspwm"
-
 # TODO: basic apps like screenshotting will have to be installed manually, this is because i want to get rid of kde altogether
 # make a list of all of them and install them in home.nix
 
-# TODO: check if changing anything here will change the environment when in bspwm, this would make things quite easier cause i wouldnt
-# have to restart my pc each time
 {
     home.packages = with pkgs; [
         bspwm

@@ -133,5 +133,11 @@
         # options = "--delete-older-than +5";
     };
 
+    fonts.packages = with pkgs; [
+        nerd-fonts.iosevka
+        nerd-fonts.iosevka-term
+        nerd-fonts.iosevka-term-slab
+    ];
+
     nix.settings.experimental-features = [ "nix-command" "flakes"];
 }

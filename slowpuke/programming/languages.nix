@@ -7,7 +7,7 @@
     ];
 
     home.packages = with pkgs; [ # (hiPrio gcc)
-        # gcc
+        gcc
         # clang
         # clang-tools
         # cmake

@@ -1,0 +1,50 @@
+# BSPWM GENERAL
+
+# restarts bspwm
+super + shift + Escape
+    bspc wm -r
+
+#kills window
+super + {h,j,k,l}
+    bspc node -f {west,south,north,east}
+
+# send window to x desktop
+super + d + {0-9}
+    bspc node -d {0-9}
+
+# send winodw and move to x desktop
+super + m + {0-9}
+    bspc node -d {0-9} && bspc dektop -f {0-9}
+
+# toggle between floating and tiled
+super + button3
+    bspc node focused.tiled -t floating || bspc node focused.tiled -t tiled
+
+# swap windows
+super + shift + {h,j,k,l}
+    bspc node -s {west,south,north,east}
+
+# switch to desktop
+super + {0-9}
+    bscp desktop -f {0-9}
+
+# resize window outwards
+ctrl + alt + {h,j,k,l}
+    bspc node -z {left -20 0, bottom 0 20, top 0 -20, right 20 0}
+
+# resize window inward
+ctrl + super + {h,j,k,l}
+    bspc node -z {right -20 0, top 0 20, bottom 0 -20, left 20 0}
+
+
+# APPLICATION SPECIFIC
+
+super + space
+    rofi -show drun
+
+super + Escape
+    rofi -show power-menu
+
+super + Return
+    kitty
+
