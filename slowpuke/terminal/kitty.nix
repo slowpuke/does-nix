@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
     home.packages = with pkgs; [
@@ -8,7 +8,7 @@
         fzf
         neofetch
         ripgrep
-        tmux
+        # tmux
     ];
 
     programs.kitty = {
