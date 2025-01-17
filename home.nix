@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
     imports = [
@@ -11,7 +11,7 @@
         ./slowpuke/systemd.nix
         ./slowpuke/programming/languages.nix
         # ./slowpuke/window-manager/bspwm.nix
-        ./slowpuke/window-manager/polybar.nix
+        # ./slowpuke/window-manager/polybar.nix
     ];
 
     home.username = "slowpuke";
@@ -20,15 +20,12 @@
 
     home.stateVersion = "23.11";
 
+    # TODO: group the apps by category
     home.packages = with pkgs; [
-        aseprite  # install only if necessary cause you have to build it from source
-        chatterino2
+        aseprite
+        cockatrice
         bitwarden-desktop
         bottles
-        # discord
-        (discord.override {
-            withVencord = true;
-        })
         dolphin
         ffmpeg
         gimp
@@ -47,21 +44,20 @@
         obsidian
         # opentabletdriver
         pavucontrol
-        qjackctl
         rnote
         signal-desktop
         spotify
-        # strawberry
         tauon
         telegram-desktop
         tiled
         unzip
-        # vivaldi
         vlc
         wine
         xclip
+        youtube-music
         yt-dlp
-        wacomtablet
+        vesktop
+        # wacomtablet
     ];
 
     programs.home-manager.enable = true;
