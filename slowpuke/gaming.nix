@@ -7,19 +7,29 @@
         prismlauncher
         openmw
         runelite
+        # devilutionx
+        # cockatrice
 
         protonup-ng
         gamemode
 
-        r2modman
+        # r2modman
         nexusmods-app
 
-        duckstation
+        # duckstation
         pcsx2
-        rpcs3
-        snes9x
+        # retroarch-full
+        (retroarch.withCores (cores: with cores; [
+            mupen64plus
+        ]))
+        # rpcs3
+        # snes9x
         
         gzdoom
         eureka-editor
+
+        godot_4
+        # ldtk
+        tiled
     ];
 }

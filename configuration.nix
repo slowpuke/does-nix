@@ -55,7 +55,7 @@
     # services.desktopManager.plasma6.enable = true;
 
     services.xserver.xkb = {
-        layout = "pl";
+        layout = "pl, it";
         variant = "legacy";
     };
 
@@ -110,15 +110,15 @@
         nix-index
         nix-prefetch-git
         linuxKernel.packages.linux_6_6.xpadneo
-        # linux-firmware
-        # mesa
-        # glxinfo
+        pulseaudio
     ];
 
     programs.nix-ld = {
         enable = true;
         libraries = with pkgs; [
             stdenv.cc.cc
+            SDL2
+            jdk8
          ];
     };
 
@@ -134,9 +134,14 @@
     };
 
     fonts.packages = with pkgs; [
+        font-awesome
+        nerd-fonts._0xproto
+        nerd-fonts.anonymice
+        nerd-fonts.inconsolata-go
         nerd-fonts.iosevka
         nerd-fonts.iosevka-term
         nerd-fonts.iosevka-term-slab
+        nerd-fonts.lilex
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes"];

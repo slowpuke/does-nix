@@ -13,7 +13,10 @@
 
     programs.kitty = {
         enable = true;
-        themeFile = "Floraverse";
+        # Floraverse
+        # id like to change it to a grey/green one for when the window manager will be online so it has the same vibe
+        # for now Harper will do, but I think id like to find something better, maybe something even with red accents to match the nvim colorscheme
+        themeFile = "Harper";
         settings = {
             cursor_shape = "beam";
             cursor_beam_thickness = 3;

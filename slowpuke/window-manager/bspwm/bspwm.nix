@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 # TODO: 125% fractional scaling, see how you can do that
 
@@ -8,8 +8,8 @@
 {
     home.packages = with pkgs; [
         bspwm
+        bsp-layout
         sxhkd
-        # nitrogen
         feh
         dunst
         lxde.lxsession

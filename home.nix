@@ -10,8 +10,8 @@
         ./slowpuke/gaming.nix
         ./slowpuke/systemd.nix
         ./slowpuke/programming/languages.nix
-        # ./slowpuke/window-manager/bspwm.nix
-        # ./slowpuke/window-manager/polybar.nix
+        # ./slowpuke/window-manager/bspwm/bspwm.nix
+        ./slowpuke/window-manager/polybar/polybar.nix
     ];
 
     home.username = "slowpuke";
@@ -20,44 +20,49 @@
 
     home.stateVersion = "23.11";
 
-    # TODO: group the apps by category
     home.packages = with pkgs; [
+        # ART
+        # alchemy
         aseprite
-        cockatrice
+        gimp
+        # krita
+        # opentabletdriver
+
+        # AUDIO
+        # bespokesynth
+        ungoogled-chromium
+        # kid3
+        helvum
+        pamixer
+        pavucontrol
+        playerctl
+        tauon
+
+        # MISC
         bitwarden-desktop
         bottles
         dolphin
-        ffmpeg
-        gimp
-        godot_4
+        fluent-reader
         # gparted
-        # gwe
-        kid3
         # keybase
         # keybase-gui
-        krita
-        helvum
-        ldtk
-        libnotify
-        libreoffice-qt
+        # libreoffice-qt
         librewolf
+        notepadqq
         obsidian
-        # opentabletdriver
-        pavucontrol
-        rnote
-        signal-desktop
-        spotify
-        tauon
+        # signal-desktop
         telegram-desktop
-        tiled
         unzip
         vlc
         wine
-        xclip
-        youtube-music
         yt-dlp
         vesktop
-        # wacomtablet
+
+        # LIB
+        dconf
+        ffmpeg
+        libnotify
+        xclip
     ];
 
     programs.home-manager.enable = true;

@@ -4,7 +4,11 @@
 super + shift + Escape
     bspc wm -r
 
-#kills window
+# close window
+super + q
+    bspc node -c
+
+# moves window
 super + {h,j,k,l}
     bspc node -f {west,south,north,east}
 
@@ -12,7 +16,7 @@ super + {h,j,k,l}
 super + d + {0-9}
     bspc node -d {0-9}
 
-# send winodw and move to x desktop
+# send window and move to x desktop
 super + m + {0-9}
     bspc node -d {0-9} && bspc dektop -f {0-9}
 
@@ -48,3 +52,7 @@ super + Escape
 super + Return
     kitty
 
+
+# OTHER
+super + alt + k
+    ~/does-nix/scripts/keyboard-switch.sh

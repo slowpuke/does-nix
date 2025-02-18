@@ -1,11 +1,17 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
+pgrep -x sxhkd > /dev/null || sxhkd &
+pkill picom
+picom &
+pkill dunst
+dunst &
 feh --bg-fill ~/does-nix/assets/wallpaper.jpg
-sleep 2; polybar -q bar
+../polybar/launch.sh    # if this doesn't work try the absolute path for it
 
-bspc monitor DP-2 -d I II III IV V VI VII VIII IX
+bspc monitor DP-2 -d I II III IV V
 
+# https://gist.github.com/CSaratakij/9b9430a3694d3af56642b040e4b03dd6 -- have a look on this one
 bspc config border_width            4
-bspc config window_gap              12
-bspc config split_ratio             0.52
-bspc config borderless_monocle      true
+bspc config window_gap              10
+bspc config split_ratio             0.60
+# bspc config borderless_monocle      true
