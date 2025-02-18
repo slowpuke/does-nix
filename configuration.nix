@@ -72,7 +72,7 @@
         alsa.enable = true;
         alsa.support32Bit = true;
         pulse.enable = true;
-        jack.enable = true;     # will this work? if it does then install qjackctl
+        # jack.enable = true;
     };
 
     users.users.slowpuke = {
@@ -110,7 +110,7 @@
         nix-index
         nix-prefetch-git
         linuxKernel.packages.linux_6_6.xpadneo
-        pulseaudio
+        pulseaudioFull
     ];
 
     programs.nix-ld = {
@@ -118,7 +118,7 @@
         libraries = with pkgs; [
             stdenv.cc.cc
             SDL2
-            jdk8
+            dconf
          ];
     };
 

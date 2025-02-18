@@ -10,7 +10,7 @@
         userName = "slowpuke";
         userEmail = "slowpuke@tuta.io";
         extraConfig = {
-            init.defaultBranch = "master";
+            init.defaultBranch = "main";
         };
     };
 }

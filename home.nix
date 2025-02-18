@@ -30,10 +30,9 @@
 
         # AUDIO
         # bespokesynth
-        ungoogled-chromium
+        ungoogled-chromium  # iykyk
         # kid3
         helvum
-        pamixer
         pavucontrol
         playerctl
         tauon
@@ -59,7 +58,6 @@
         vesktop
 
         # LIB
-        dconf
         ffmpeg
         libnotify
         xclip
