@@ -9,7 +9,9 @@ a NixOS by slowpuke for slowpuke
 - [ ] fzf
 - [ ] zoxide
 - [ ] Auto update and garbage collection
-- [ ] Window splitting in Kitty
+- [X] Window splitting in Kitty
 - [ ] Configure FastFetch with home-manager
 - [ ] Configure lf for the primary file explorer
+- [ ] Setup a screenshot tool
+- [ ] udisk rofi script
 

@@ -49,6 +49,7 @@
         librewolf
         notepadqq
         obsidian
+        parsec-bin
         # signal-desktop
         telegram-desktop
         unzip
