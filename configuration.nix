@@ -78,7 +78,7 @@
     users.users.slowpuke = {
         isNormalUser = true;
         description = "slowpuke";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "video" ];
     };
 
     nixpkgs.config.allowUnfree = true;
@@ -111,6 +111,7 @@
         nix-prefetch-git
         linuxKernel.packages.linux_6_6.xpadneo
         pulseaudioFull
+        light
     ];
 
     programs.nix-ld = {
@@ -118,7 +119,6 @@
         libraries = with pkgs; [
             stdenv.cc.cc
             SDL2
-            dconf
          ];
     };
 
@@ -143,6 +143,8 @@
         nerd-fonts.iosevka-term-slab
         nerd-fonts.lilex
     ];
+
+    programs.light.enable = true;
 
     nix.settings.experimental-features = [ "nix-command" "flakes"];
 }

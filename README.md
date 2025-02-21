@@ -2,11 +2,10 @@ a NixOS by slowpuke for slowpuke
 
 # WORK IN PROGRESS, MAYBE ONE DAY IT WILL BE FINISHED
 - [ ] bspwm configured
-- [ ] polybar configured
+- [X] polybar configured
 - [ ] dunst configured
 - [ ] A better and more organized Rofi app launcher
 - [ ] A better solution for all the programming flakes
-- [ ] fzf
 - [ ] zoxide
 - [ ] Auto update and garbage collection
 - [X] Window splitting in Kitty
@@ -14,4 +13,5 @@ a NixOS by slowpuke for slowpuke
 - [ ] Configure lf for the primary file explorer
 - [ ] Setup a screenshot tool
 - [ ] udisk rofi script
+- [ ] rofi theme and scripts
 

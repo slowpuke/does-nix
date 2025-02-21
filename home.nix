@@ -18,6 +18,12 @@
     home.homeDirectory = "/home/slowpuke";
     nixpkgs.config.allowUnfree = true;
 
+    gtk.cursorTheme = {
+        name = "Posy's Cursor Black";
+        size = 32;
+        package = pkgs.posy-cursors;
+    };
+
     home.stateVersion = "23.11";
 
     home.packages = with pkgs; [
@@ -51,6 +57,7 @@
         obsidian
         parsec-bin
         # signal-desktop
+        spectacle
         telegram-desktop
         unzip
         vlc

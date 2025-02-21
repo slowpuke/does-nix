@@ -1,16 +1,17 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 {
     programs.zsh = {
         enable = true;
         syntaxHighlighting = {
             enable = true;
-            # styles = {
-            #     "alias" = "fg=magenta";
-            #     "builtin" = "fg=magenta";
-            #     "command" = "fg=magenta";
-            #     "function" = "fg=magenta";
-            # };
+            styles = {
+                "alias" = "fg=magenta";
+                "builtin" = "fg=magenta";
+                "command" = "fg=magenta";
+                "function" = "fg=magenta";
+                "unknown-token" = "fg=white";
+            };
         };
         shellAliases = {
             ssd-update = "${config.home.homeDirectory}/does-nix/scripts/ssd-backup-notification/ssd-backup-notif update";
