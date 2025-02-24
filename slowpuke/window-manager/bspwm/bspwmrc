@@ -1,5 +1,12 @@
 #!/usr/bin/env sh
 
+# TODO: see other video in the playlist to see if there are more options you can set
+
+# TODO: 144hz and 1.25x scaling will be needed, especially the 144hz, this thread could help -- https://old.reddit.com/r/bspwm/comments/vr4lnw/can_bspwm_have_144hz/
+# i think this command added here could be enough "xrandr --output DisplayPort-1 --mode 1920x1080 --rate 144" but im not sure 100%
+# also the command above will have to be modified for your needs
+
+
 pgrep -x sxhkd > /dev/null || sxhkd &
 pkill picom
 picom &
@@ -10,12 +17,19 @@ feh --bg-fill ~/does-nix/assets/wallpaper.jpg
 
 bspc monitor DP-2 -d I II III IV V
 
-# https://gist.github.com/CSaratakij/9b9430a3694d3af56642b040e4b03dd6 -- have a look on this one
 bspc config border_width            4
 bspc config window_gap              10
+bspc config border_width            3
 bspc config split_ratio             0.60
 # bspc config borderless_monocle      true
+bspc config focus_follows_pointer   false
 
-bspc rule -a Steam desktop=^4
-bspc rule -a Heroic desktop=^4
+bspc config normal_border_color     "#451239"
+bspc config focused_border_color    "#d0b1c6"
+bspc config urgent_border_color     "#e8ff47"
+bspc config presel_border_color     "#340034"
+
+bspc rule -a steam desktop=^4
+bspc rule -a heroic desktop=^4
 bspc rule -a tauonmb desktop=^5
+bspc rule -a librewolf desktop=^1

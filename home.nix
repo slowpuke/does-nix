@@ -44,6 +44,7 @@
         tauon
 
         # MISC
+        betterlockscreen            # rofi
         bitwarden-desktop
         bottles
         dolphin
@@ -53,22 +54,27 @@
         # keybase-gui
         # libreoffice-qt
         librewolf
+        # maim                        # rofi
         notepadqq
         obsidian
         parsec-bin
         # signal-desktop
-        spectacle
+        # sectacle
         telegram-desktop
         unzip
         vlc
-        wine
-        yt-dlp
         vesktop
+        viewnior
+        wine
+        xfce.xfce4-power-manager    # rofi
+        yt-dlp
 
         # LIB
         ffmpeg
         libnotify
+        procps                      # rofi
         xclip
+        xdotool                     # rofi
     ];
 
     programs.home-manager.enable = true;

@@ -18,12 +18,10 @@
 
         # duckstation
         pcsx2
-        # retroarch-full
         (retroarch.withCores (cores: with cores; [
             mupen64plus
         ]))
         # rpcs3
-        # snes9x
         
         gzdoom
         eureka-editor

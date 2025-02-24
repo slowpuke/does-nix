@@ -10,7 +10,7 @@
         };
         # theme by Murzchnvok -- https://github.com/Murzchnvok/rofi-collection
         # with changed colors
-        theme = ./type7-style7.rasi;
+        theme = ./themes/type7-style7.rasi;
         terminal = "${pkgs.kitty}/bin/kitty";
         extraConfig = {
             modi = "drun,power-menu:${pkgs.rofi-power-menu}/bin/rofi-power-menu";

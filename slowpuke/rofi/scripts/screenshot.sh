@@ -11,7 +11,7 @@ theme="$type/$style"
 
 # Theme Elements
 prompt='Screenshot'
-mesg="DIR: `xdg-user-dir PICTURES`/Screenshots"
+mesg="DIR: ~/here/screenshots"
 
 if [[ "$theme" == *'type-1'* ]]; then
 	list_col='1'
@@ -40,11 +40,11 @@ if [[ "$layout" == 'NO' ]]; then
 	option_4=" Capture in 5s"
 	option_5=" Capture in 10s"
 else
-	option_1=""
-	option_2=""
-	option_3=""
-	option_4=""
-	option_5=""
+	option_1="  "
+	option_2="  "
+	option_3="  "
+	option_4="5 "
+	option_5="10 "
 fi
 
 # Rofi CMD
@@ -67,7 +67,7 @@ run_rofi() {
 # Screenshot
 time=`date +%Y-%m-%d-%H-%M-%S`
 geometry=`xrandr | grep 'current' | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current'`
-dir="`xdg-user-dir PICTURES`/Screenshots"
+dir="$HOME/here/screenshots"
 file="Screenshot_${time}_${geometry}.png"
 
 if [[ ! -d "$dir" ]]; then

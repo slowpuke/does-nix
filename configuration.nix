@@ -111,7 +111,9 @@
         nix-prefetch-git
         linuxKernel.packages.linux_6_6.xpadneo
         pulseaudioFull
-        light
+        xorg.xbacklight
+        brightnessctl
+        xorg.xprop      # to get the name of the window for bspwm rule use xprop | grep WM_CLASS
     ];
 
     programs.nix-ld = {
@@ -123,6 +125,8 @@
     };
 
     hardware.xpadneo.enable = true;
+
+    programs.light.enable = true;
 
     # i would like to delete all but 5, or some other arbitrary number, but the docs seem to be gone, so lookup 
     # on the internet a solution
@@ -144,7 +148,6 @@
         nerd-fonts.lilex
     ];
 
-    programs.light.enable = true;
 
     nix.settings.experimental-features = [ "nix-command" "flakes"];
 }
