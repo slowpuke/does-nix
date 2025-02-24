@@ -6,8 +6,11 @@
 ## Applets : Screenshot
 
 # Import Current Theme
-source "$HOME"/does-nix/slowpuke/rofi/themes/theme.bash
-theme="$type/$style"
+# source "$HOME"/does-nix/slowpuke/rofi/themes/theme.bash
+# theme="$type/$style"
+path="$HOME/does-nix/slowpuke/rofi/themes"
+theme_type="type-4.rasi"
+theme="$path/$theme_type"
 
 # Theme Elements
 prompt='Screenshot'

@@ -1,11 +1,13 @@
 a NixOS by slowpuke for slowpuke
 
 # WORK IN PROGRESS, MAYBE ONE DAY IT WILL BE FINISHED
-- [ ] bspwm configured
+- [X] bspwm configured
+- [X] bspwm floating windows moving and resizing
+- [ ] revise sxhkd with rofi and make sure all the commands make sense and that the same key combination isnt repeated 
 - [X] polybar configured
 - [ ] dunst configured
 - [ ] A better solution for all the programming flakes
-- [ ] zoxide
+- [X] zoxide
 - [ ] garbage collection for home-manager
 - [X] Window splitting in Kitty
 - [ ] Configure FastFetch with home-manager
@@ -14,5 +16,5 @@ a NixOS by slowpuke for slowpuke
 - [ ] udisk rofi script
 - [ ] bluetooth rofi script
 - [X] rofi theme
-- [ ] find a way to manage the rofi theme without the theme.bash file
+- [X] find a way to manage the rofi theme without the theme.bash file
 

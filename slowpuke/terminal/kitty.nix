@@ -8,15 +8,14 @@
         fzf
         neofetch
         ripgrep
+        zoxide
     ];
 
     programs.kitty = {
         enable = true;
         # Floraverse
-        # id like to change it to a grey/green one for when the window manager will be online so it has the same vibe
-        # for now Harper will do, but I think id like to find something better, maybe something even with red accents to match the nvim colorscheme
-        # Mathias, NightLion_v1, Tango_Dark*, 
         themeFile = "Tango_Dark";
+        font.name = "Lilex Nerd Font";
         settings = {
             cursor_shape = "beam";
             cursor_beam_thickness = 3;
@@ -60,5 +59,15 @@
             "ctrl+shift+l" = "resize_window wider";
             "ctrl+shift+home" = "resize_window reset";
         };
+    };
+
+    programs.zoxide = {
+        enable = true;
+        options = [
+            "--cmd cd"
+        ];
+        enableZshIntegration = true;
+        enableFishIntegration = false;
+        enableBashIntegration = false;
     };
 }

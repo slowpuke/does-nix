@@ -27,14 +27,14 @@
     home.stateVersion = "23.11";
 
     home.packages = with pkgs; [
-        # ART
+        ### ART ###
         # alchemy
         aseprite
         gimp
         # krita
         # opentabletdriver
 
-        # AUDIO
+        ### AUDIO ###
         # bespokesynth
         ungoogled-chromium  # iykyk
         # kid3
@@ -43,7 +43,7 @@
         playerctl
         tauon
 
-        # MISC
+        ### MISC ###
         betterlockscreen            # rofi
         bitwarden-desktop
         bottles
@@ -69,7 +69,7 @@
         xfce.xfce4-power-manager    # rofi
         yt-dlp
 
-        # LIB
+        ### LIB ###
         ffmpeg
         libnotify
         procps                      # rofi
