@@ -46,17 +46,22 @@ super + space
     rofi -show drun
 
 super + Escape
-    rofi -show power-menu   # fix
+    ~/does-nix/slowpuke/rofi/scripts/powermenu.sh
+
+super + b
+    ~/does-nix/slowpuke/rofi/scripts/rofi-bluetooth.sh
+
+super + m
+    ~/does-nix/slowpuke/rofi/scripts/mounter.sh
+
+super + s
+    ~/does-nix/slowpuke/rofi/scripts/screenshot.sh
+
+super + l
+    ~/does-nix/slowpuke/rofi/scripts/brightness.sh
 
 
 ### APPLICATION SPECIFIC ###
-
 super + Return
     kitty
-
-
-### OTHER ###
-# this might be useless
-super + alt + k
-    ~/does-nix/scripts/keyboard-switch.sh
 

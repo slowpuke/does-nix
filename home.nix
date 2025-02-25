@@ -61,6 +61,7 @@
         # signal-desktop
         # sectacle
         telegram-desktop
+        udiskie
         unzip
         vlc
         vesktop
@@ -70,6 +71,7 @@
         yt-dlp
 
         ### LIB ###
+        bc                          # rofi
         ffmpeg
         libnotify
         procps                      # rofi
