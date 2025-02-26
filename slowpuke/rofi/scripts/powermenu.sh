@@ -6,9 +6,7 @@
 ## Applets : Power Menu
 
 # Import Current Theme
-# source "$HOME"/does-nix/slowpuke/rofi/themes/theme.bash
-# theme="$type/$style"
-path="$HOME/does-nix/slowpuke/rofi/themes"
+path="$SLOWPUKE_NIX/rofi/themes"
 theme_type="type-4.rasi"
 theme="$path/$theme_type"
 

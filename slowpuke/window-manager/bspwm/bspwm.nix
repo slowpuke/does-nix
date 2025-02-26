@@ -1,10 +1,5 @@
 { pkgs, ... }:
 
-# TODO: 125% fractional scaling, see how you can do that
-
-# TODO: basic apps like screenshotting will have to be installed manually, this is because i want to get rid of kde altogether
-# make a list of all of them and install them in home.nix
-
 {
     home.packages = with pkgs; [
         bspwm
@@ -18,6 +13,7 @@
 
     xsession.windowManager.bspwm = {
         enable = true;
+        config = ./bspwmrc;
         # rules = {
         #
         # };
@@ -46,6 +42,7 @@
 
     services.sxhkd = {
         enable = true;
+        config = ./sxhkdrc;
         # keybindings = {
         #     "super + Return" = "kitty";
         #     "super + space" = "rofi -show drun";

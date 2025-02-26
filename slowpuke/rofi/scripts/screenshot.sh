@@ -6,15 +6,13 @@
 ## Applets : Screenshot
 
 # Import Current Theme
-# source "$HOME"/does-nix/slowpuke/rofi/themes/theme.bash
-# theme="$type/$style"
-path="$HOME/does-nix/slowpuke/rofi/themes"
+path="$SLOWPUKE_NIX/rofi/themes"
 theme_type="type-4.rasi"
 theme="$path/$theme_type"
 
 # Theme Elements
 prompt='Screenshot'
-mesg="DIR: ~/here/screenshots"
+mesg="DIR: /home/slowpuke/here/screenshots"
 
 if [[ "$theme" == *'type-1'* ]]; then
 	list_col='1'
@@ -70,7 +68,7 @@ run_rofi() {
 # Screenshot
 time=`date +%Y-%m-%d-%H-%M-%S`
 geometry=`xrandr | grep 'current' | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current'`
-dir="$HOME/here/screenshots"
+dir="$SLOWPUKE_HERE/screenshots"
 file="Screenshot_${time}_${geometry}.png"
 
 if [[ ! -d "$dir" ]]; then

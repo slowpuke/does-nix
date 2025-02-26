@@ -6,7 +6,7 @@
         kitty-themes
         bottom
         fzf
-        neofetch
+        fastfetch
         ripgrep
         zoxide
     ];
@@ -69,5 +69,85 @@
         enableZshIntegration = true;
         enableFishIntegration = false;
         enableBashIntegration = false;
+    };
+
+    programs.fastfetch = {
+        enable = true;
+        settings = {
+            logo = {
+                color = {
+                    "1" = "magenta";
+                    "2" = "white";
+                };
+            };
+            display = {
+                color = "magenta";
+                separator = "  ";
+            };
+            modules = [
+                {
+                    type = "title";
+                    format = "{#1}╭───────────── {#}{user-name-colored}";
+                }
+                {
+                    type = "os";
+                    key = "{#separator}│  {#keys}󰍹 OS";
+                }
+                {
+                    type = "kernel";
+                    key = "{#separator}│  {#keys}󰒋 Kernel";
+                }
+                {
+                    type = "packages";
+                    key = "{#separator}│  {#keys}󰏖 Packages";
+                    format = "{all}";
+                }
+                {
+                    type = "wm";
+                    key = "{#separator}│  {#keys}󱂬 WM";
+                }
+                {
+                    type = "terminal";
+                    key = "{#separator}│  {#keys} Terminal";
+                }
+                {
+                    type = "shell";
+                    key = "{#separator}│  {#keys}󰞷 Shell";
+                }
+                {
+                    type = "terminalfont";
+                    key = "{#separator}│  {#keys}󰛖 Font";
+                }
+                {
+                    type = "cpu";
+                    key = "{#separator}│  {#keys} CPU";
+                }
+                {
+                    type = "gpu";
+                    key = "{#separator}│  {#keys}󰢮 GPU";
+                }
+                {
+                    type = "vulkan";
+                    key = "{#separator}│  {#keys} Vulkan";
+                }
+                {
+                    type = "memory";
+                    key = "{#separator}│  {#keys} Memory";
+                }
+                {
+                    type = "disk";
+                    key = "{#separator}│  {#keys}󰋊 Disk (/)";
+                    folders = "/";
+                }
+                {
+                    type = "custom";
+                    format = "{#1}╰───────────────────────────────╯";
+                }
+                {
+                    type = "colors";
+                    symbol = "block";
+                }
+            ];
+        };
     };
 }

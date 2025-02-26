@@ -26,6 +26,8 @@
         ";
         envExtra = "
             export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
+            export SLOWPUKE_NIX='/home/slowpuke/does-nix/slowpuke'
+            export SLOWPUKE_HERE='/home/slowpuke/here'
         ";
         oh-my-zsh = {
             enable = true;
