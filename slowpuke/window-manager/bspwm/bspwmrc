@@ -1,17 +1,14 @@
 #!/usr/bin/env sh
 
-bspc rule -r "*"
-
 pgrep -x sxhkd > /dev/null || sxhkd &
-# pkill picom
-killall "picom"
+pkill picom
 picom &
-# pkill dunst
-killall "dunst"
+pkill dunst
 dunst &
 feh --bg-fill ~/does-nix/assets/wallpaper.jpg &
 xrandr --output DisplayPort-2 --mode 1920x1080 --rate 144
-../polybar/launch.sh    # if this doesn't work try the absolute path for it
+xsetroot -cursor_name left_ptr
+/home/slowpuke/does-nix/slowpuke/window-manager/polybar/launch.sh
 
 bspc monitor DP-2 -d I II III IV V
 
@@ -22,19 +19,19 @@ bspc config split_ratio                     0.60
 bspc config single_monocle                  false
 bspc config borderless_monocle              true
 bspc config focus_follows_pointer           true
+bspc config pointer_motion_interval         7ms
 
 bspc config pointer_modifier                alt
 bspc config pointer_action1                 move
 bspc config pointer_action2                 resize_side
 bspc config pointer_action3                 resize_corner
-bspc config pointer_motion_interval         7ms
 
 bspc config normal_border_color             "#451239"
 bspc config focused_border_color            "#d0b1c6"
 bspc config urgent_border_color             "#e8ff47"
 bspc config presel_border_color             "#340034"
 
+bspc rule -a librewolf desktop=^1
 bspc rule -a steam desktop=^4
 bspc rule -a heroic desktop=^4
 bspc rule -a tauonmb desktop=^5
-bspc rule -a librewolf desktop=^1

@@ -19,7 +19,12 @@
         # duckstation
         pcsx2
         (retroarch.withCores (cores: with cores; [
+            bsnes-hd
+            citra
+            gambatte
+            genesis-plus-gx
             mupen64plus
+            swanstation
         ]))
         # rpcs3
         

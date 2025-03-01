@@ -13,19 +13,20 @@ super + {h,j,k,l}
     bspc node -f {west,south,north,east}
 
 # send window to x desktop
-super + d + {0-9}
-    bspc node -d {0-9}
+super + d + {1, 2, 3, 4, 5}
+    bspc node -d {I, II, III, IV, V}
 
 # send window and move to x desktop
-super + m + {0-9}
-    bspc node -d {0-9} && bspc dektop -f {0-9}
+super + m + {1, 2, 3, 4, 5}
+    bspc node -d {I, II, III, IV, V} && bspc dektop -f {I, II, III, IV, V}
 
 # toggle between floating and tiled
 super + f
-    bspc node focused.tiled -t floating || bspc node focused.tiled -t tiled
+    bspc node -t '~floating'
+    # bspc node focused.tiled -t floating || bspc node focused.tiled -t tiled
 
 # toggle fullscreen
-super + t
+super + t 
     bspc node -t '~fullscreen'
 
 # swap windows
@@ -33,8 +34,8 @@ super + shift + {h,j,k,l}
     bspc node -s {west,south,north,east}
 
 # switch to desktop
-super + {0-9}
-    bscp desktop -f {0-9}
+super + {1, 2, 3, 4, 5}
+    bscp desktop -f {I, II, III, IV, V}
 
 # resize window outwards
 ctrl + alt + {h,j,k,l}
@@ -50,22 +51,30 @@ super + space
     rofi -show drun
 
 super + Escape
-    $SLOWPUKE_NIX/rofi/scripts/powermenu.sh
+    ~/does-nix/slowpuke/rofi/scripts/powermenu.sh
 
-super + b
-    $SLOWPUKE_NIX/rofi/scripts/rofi-bluetooth.sh
+super + r + b
+    ~/does-nix/slowpuke/rofi/scripts/rofi-bluetooth.sh
 
-super + m
-    $SLOWPUKE_NIX/rofi/scripts/mounter.sh
+super + r + m
+    ~/does-nix/slowpuke/rofi/scripts/mounter.sh
 
-super + s
-    $SLOWPUKE_NIX/rofi/scripts/screenshot.sh
+super + r + s
+    ~/does-nix/slowpuke/rofi/scripts/screenshot.sh
 
-super + l
-    $SLOWPUKE_NIX/rofi/scripts/brightness.sh
+super + r + l
+    ~/does-nix/slowpuke/rofi/scripts/brightness.sh
 
 
-### APPLICATION SPECIFIC ###
+### DUNST ###
+super + n + p
+    dunstctl history-pop
+
+super + n + c
+    dunstctl close-all
+
+
+### APPLICATION SPECIFIC OPEN ###
 super + Return
     kitty
 

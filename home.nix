@@ -4,25 +4,17 @@
     imports = [
         ./slowpuke/terminal/kitty.nix
         ./slowpuke/terminal/zsh.nix
-        ./slowpuke/rofi/rofi.nix
+        ./slowpuke/rofi/rofi.nix        # move to bspwm.nix when ready
         ./slowpuke/git.nix
         ./slowpuke/nvim.nix
         ./slowpuke/gaming.nix
         ./slowpuke/systemd.nix
         ./slowpuke/programming/languages.nix
-        # ./slowpuke/window-manager/bspwm/bspwm.nix
-        ./slowpuke/window-manager/polybar/polybar.nix
     ];
 
     home.username = "slowpuke";
     home.homeDirectory = "/home/slowpuke";
     nixpkgs.config.allowUnfree = true;
-
-    gtk.cursorTheme = {
-        name = "Posy's Cursor Black";
-        size = 32;
-        package = pkgs.posy-cursors;
-    };
 
     home.stateVersion = "23.11";
 
@@ -30,13 +22,14 @@
         ### ART ###
         # alchemy
         aseprite
+        # decker
         gimp
         # krita
         # opentabletdriver
 
         ### AUDIO ###
         # bespokesynth
-        ungoogled-chromium  # iykyk
+        ungoogled-chromium              # iykyk
         # kid3
         helvum
         pavucontrol
@@ -44,17 +37,17 @@
         tauon
 
         ### MISC ###
-        betterlockscreen            # rofi
+        betterlockscreen                # rofi
         bitwarden-desktop
         bottles
-        dolphin
+        kdePackages.dolphin
         fluent-reader
         # gparted
         # keybase
         # keybase-gui
         # libreoffice-qt
         librewolf
-        # maim                        # rofi
+        maim                            # rofi
         notepadqq
         obsidian
         parsec-bin
@@ -67,17 +60,33 @@
         vesktop
         viewnior
         wine
-        xfce.xfce4-power-manager    # rofi
         yt-dlp
 
         ### LIB ###
-        bc                          # rofi
+        bc                              # rofi
         ffmpeg
         libnotify
-        procps                      # rofi
+        procps                          # rofi
         xclip
-        xdotool                     # rofi
+        xdotool                         # rofi
     ];
 
     programs.home-manager.enable = true;
+
+    # gtk.cursorTheme = {
+    #     name = "Posy's Cursor Black";
+    #     size = 32;
+    #     package = pkgs.posy-cursors;
+    # };
+
+    home.pointerCursor = {
+        x11.enable = true;
+        gtk.enable = true;
+        name = "Posy's Cursor";
+        size = 32;
+        package = pkgs.posy-cursors;
+        x11.defaultCursor = "Posy's Cursor Black";
+    };
+
+    news.display = "silent";
 }

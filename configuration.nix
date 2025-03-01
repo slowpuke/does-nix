@@ -3,6 +3,7 @@
 {
     imports = [
         ./hardware-configuration.nix
+        # ./slowpuke/window-manager/bspwm/bspwm.nix
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_6_6;
@@ -50,9 +51,8 @@
             };
         };
     };
-    services.xserver.windowManager.bspwm.enable = true;
+
     services.xserver.desktopManager.plasma5.enable = true;
-    # services.desktopManager.plasma6.enable = true;
 
     services.xserver.xkb = {
         layout = "pl, it";
@@ -63,7 +63,6 @@
 
     services.printing.enable = true;
 
-    # sound.enable = true;
     services.pulseaudio.enable = false;
     services.pulseaudio.support32Bit = true;
     security.rtkit.enable = true;
@@ -72,7 +71,6 @@
         alsa.enable = true;
         alsa.support32Bit = true;
         pulse.enable = true;
-        # jack.enable = true;
     };
 
     users.users.slowpuke = {
@@ -88,8 +86,6 @@
     hardware.graphics = {
         enable = true;
         enable32Bit = true;
-        # driSupport = true;
-        # driSupport32Bit = true;
         extraPackages = [ pkgs.mesa.drivers ];
     };
 
@@ -110,7 +106,6 @@
         nix-index
         nix-prefetch-git
         linuxKernel.packages.linux_6_6.xpadneo
-        # linuxKernel.packages.linux_6_6.ddcci-driver
         pulseaudioFull
     ];
 
@@ -125,13 +120,10 @@
     hardware.xpadneo.enable = true;
     programs.light.enable = true;
 
-    # i would like to delete all but 5, or some other arbitrary number, but the docs seem to be gone, so lookup 
-    # on the internet a solution
     nix.gc = { 
         automatic = true; 
         dates = "daily"; 
-        options = "--delete-older-than 7d"; 
-        # options = "--delete-older-than +5";
+        options = "--delete-older-than 15d"; 
     };
 
     fonts.packages = with pkgs; [
@@ -144,7 +136,6 @@
         nerd-fonts.iosevka-term-slab
         nerd-fonts.lilex
     ];
-
 
     nix.settings.experimental-features = [ "nix-command" "flakes"];
 }

@@ -6,7 +6,7 @@ human_readable_last_update=$( date -d "@$last_update" +'%d/%m/%Y' )
 
 if [[ $1 = "update" ]]; then
     > ~/does-nix/scripts/ssd-backup-notification/date
-    echo $current_unix_date >> ~/does-nix/scripts/ssd-backup-notification/date
+    echo "$current_unix_date" >> ~/does-nix/scripts/ssd-backup-notification/date
     echo "The date has been updated to ${human_readable_last_update}"
 fi
 
