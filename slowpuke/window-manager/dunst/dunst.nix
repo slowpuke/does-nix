@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-    # change to env packages
     home.packages = with pkgs; [
         dunst
         colloid-icon-theme

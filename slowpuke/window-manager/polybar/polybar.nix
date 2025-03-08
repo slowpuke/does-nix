@@ -7,7 +7,7 @@
     
     services.polybar = {
         enable = true;
-        pakcage = pkgs.polybar;
+        package = pkgs.polybar;
         config = ./polybar.ini;
         script = "polybar real &amp;";
     };

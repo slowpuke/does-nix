@@ -6,7 +6,7 @@
 ## Applets : Brightness
 
 # Import Current Theme
-path="$SLOWPUKE_NIX/rofi/themes"
+path="/home/slowpuke/does-nix/slowpuke/rofi/themes"
 theme_type="type-4.rasi"
 theme="$path/$theme_type"
 

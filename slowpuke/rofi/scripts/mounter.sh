@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-device=$(udiskie-info -0 -a -o "{device_file} {ui_label}" | rofi -dmenu -theme ../themes/type-7-stripped.rasi | cut -d' ' -f1)
+device=$(udiskie-info -0 -a -o "{device_file} {ui_label}" | rofi -dmenu -theme /home/slowpuke/does-nix/slowpuke/rofi/themes/type-7-stripped.rasi | cut -d' ' -f1)
 
 if [ -n "$device" ] ; then
 

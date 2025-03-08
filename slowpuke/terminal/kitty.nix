@@ -9,6 +9,9 @@
         fastfetch
         ripgrep
         zoxide
+        serie
+        rainfrog
+        yazi
     ];
 
     programs.kitty = {
@@ -16,6 +19,7 @@
         # Floraverse
         themeFile = "Tango_Dark";
         font.name = "Lilex Nerd Font";
+        font.size = 14;
         settings = {
             cursor_shape = "beam";
             cursor_beam_thickness = 3;

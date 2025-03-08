@@ -3,7 +3,6 @@
 {
     imports = [
         ./hardware-configuration.nix
-        # ./slowpuke/window-manager/bspwm/bspwm.nix
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_6_6;
@@ -52,7 +51,10 @@
         };
     };
 
+    services.xserver.windowManager.bspwm.enable = true;
     services.xserver.desktopManager.plasma5.enable = true;
+
+    services.xserver.dpi = 115;     # if bad go back to 125
 
     services.xserver.xkb = {
         layout = "pl, it";
