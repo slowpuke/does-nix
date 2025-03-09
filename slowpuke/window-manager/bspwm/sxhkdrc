@@ -37,12 +37,19 @@ super + shift + {h,j,k,l}
     bspc node -s {west,south,north,east}
 
 # resize window outwards
-ctrl + alt + {h,j,k,l}
-    bspc node -z {left -20 0, bottom 0 20, top 0 -20, right 20 0}
+# ctrl + alt + {h,j,k,l}
+#     bspc node -z {left -20 0, bottom 0 20, top 0 -20, right 20 0}
 
 # resize window inward
-ctrl + super + {h,j,k,l}
-    bspc node -z {right -20 0, top 0 20, bottom 0 -20, left 20 0}
+# ctrl + super + {h,j,k,l}
+#     bspc node -z {right -20 0, top 0 20, bottom 0 -20, left 20 0}
+
+# resize window
+ctrl + alt + {h,j,k,l}
+    bspc node -z {left -20 0 || bspc node -z right -20 0, \
+                bottom 0 20 || bspc node -z top 0 20,\
+                top 0 -20 || bspc node -z bottom 0 -20,\
+                right 20 0 || bspc node -z left 20 0}
 
 
 ### ROFI ###
