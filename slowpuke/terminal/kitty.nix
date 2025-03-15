@@ -135,6 +135,10 @@
                     key = "{#separator}│  {#keys} Vulkan";
                 }
                 {
+                    type = "opengl";
+                    key = "{#separator}│  {#keys} OpenGL";
+                }
+                {
                     type = "memory";
                     key = "{#separator}│  {#keys} Memory";
                 }

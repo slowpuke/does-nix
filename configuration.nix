@@ -52,9 +52,39 @@
     };
 
     services.xserver.windowManager.bspwm.enable = true;
-    services.xserver.desktopManager.plasma5.enable = true;
 
-    services.xserver.dpi = 115;     # if bad go back to 125
+    powerManagement.enable = false;
+
+    systemd.sleep.extraConfig = ''
+        AllowSuspend=no
+        AllowHibernation=no
+        AllowHybridSleep=no
+        AllowSuspendThenHibernate=no
+    '';
+
+    systemd = {
+        targets = {
+            sleep = {
+                enable = false;
+                unitConfig.DefaultDependencies = "no";
+            };
+            suspend = {
+                enable = false;
+                unitConfig.DefaultDependencies = "no";
+            };
+            hibernate = {
+                enable = false;
+                unitConfig.DefaultDependencies = "no";
+            };
+            "hybrid-sleep" = {
+                enable = false;
+                unitConfig.DefaultDependencies = "no";
+            };
+        };
+    };
+
+
+    services.xserver.dpi = 115;
 
     services.xserver.xkb = {
         layout = "pl, it";
@@ -115,7 +145,15 @@
         enable = true;
         libraries = with pkgs; [
             stdenv.cc.cc
-            SDL2
+            
+            # for wgpu development
+            xorg.libX11
+            xorg.libXcursor
+            xorg.libxcb
+            xorg.libXi
+            libxkbcommon
+
+            SDL2                # for uxn
          ];
     };
 

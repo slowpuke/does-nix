@@ -23,7 +23,7 @@
                 transparency = 0;
                 separator_height = 2;
                 padding = 8;
-                text_icon_padding = 2;
+                text_icon_padding = 11;
                 frame_width = 1;
                 frame_color = "#D0B1C6";
                 sort = "yes";
@@ -41,8 +41,8 @@
                 enable_recursive_icon_lookup = true;
                 icon_theme = "Colloid-Yellow-Light";
                 icon_position = "right";
-                min_icon_size = 48;
-                max_icon_size = 128;
+                min_icon_size = 20;
+                max_icon_size = 50;
                 mouse_left_click = "close_current";
                 mouse_middle_click = "do_action, close_current";
                 mouse_right_click = "close_all";

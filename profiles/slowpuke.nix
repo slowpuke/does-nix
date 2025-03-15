@@ -60,12 +60,6 @@
         xclip
     ];
 
-    # gtk.cursorTheme = {
-    #     name = "Posy's Cursor Black";
-    #     size = 32;
-    #     package = pkgs.posy-cursors;
-    # };
-
     home.pointerCursor = {
         x11.enable = true;
         gtk.enable = true;

@@ -68,7 +68,7 @@ run_rofi() {
 # Screenshot
 time=`date +%Y-%m-%d-%H-%M-%S`
 geometry=`xrandr | grep 'current' | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current'`
-dir="$SLOWPUKE_HERE/screenshots"
+dir="/home/slowpuke/here/screenshots"
 file="Screenshot_${time}_${geometry}.png"
 
 if [[ ! -d "$dir" ]]; then

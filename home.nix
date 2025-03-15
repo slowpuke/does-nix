@@ -11,4 +11,12 @@
     home.stateVersion = "23.11";
     programs.home-manager.enable = true;
     news.display = "silent";
+
+    xdg.mimeApps = {
+        enable = true;
+        defaultApplications = {  
+            "inode/directory" = "dolphin.desktop"; 
+            # TODO: add browser
+        };
+    };
 }
