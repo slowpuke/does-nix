@@ -27,10 +27,12 @@ a NixOS by slowpuke for slowpuke
 - [X] cursor working sometimes -- fix it, maybe the home.pointer option will work better
 - [X] 144hz
 - [X] move the bspwm setup to bspwm.nix but import it in configuration.nix, fix all the problems that come along
-- [ ] add animations with `pijulius`, hopefully the settings options will work no issue
+- [X] add animations with `pijulius`, hopefully the settings options will work no issue
 - [X] `lf` wasnt up to my speed, maybe `yazi` will be better
 - [X] make profiles, copy the home packages to each one (slowpuke and slowpuke-minimal(or just minimal)) and then delete or add the packages you need for both, when using a system just import into `home.nix` the profile you need. This wouldnt solve the bspwm being in the system config, but alas this is better than nothing
-- [ ] move flakes into its own repo, make it private, and keep a clone of it in the home directory
+- [X] move flakes into its own repo, make it private, and keep a clone of it in the home directory
 - [ ] set some default apps, like `feh` for images, `vlc` for videos, `tauon` for music, and `librewolf` for opening links
+- [ ] prevent sleep
+- [ ] lookup direnv and how to implement it to your workflow
 - [ ] write a normal `README`
 

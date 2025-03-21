@@ -53,36 +53,39 @@
 
     services.xserver.windowManager.bspwm.enable = true;
 
-    powerManagement.enable = false;
-
-    systemd.sleep.extraConfig = ''
-        AllowSuspend=no
-        AllowHibernation=no
-        AllowHybridSleep=no
-        AllowSuspendThenHibernate=no
-    '';
-
-    systemd = {
-        targets = {
-            sleep = {
-                enable = false;
-                unitConfig.DefaultDependencies = "no";
-            };
-            suspend = {
-                enable = false;
-                unitConfig.DefaultDependencies = "no";
-            };
-            hibernate = {
-                enable = false;
-                unitConfig.DefaultDependencies = "no";
-            };
-            "hybrid-sleep" = {
-                enable = false;
-                unitConfig.DefaultDependencies = "no";
-            };
-        };
-    };
-
+    # powerManagement.enable = false;
+    systemd.targets.sleep.enable = false;
+    systemd.targets.suspend.enable = false;
+    systemd.targets.hibernate.enable = false;
+    systemd.targets.hybrid-sleep.enable = false;
+    
+    # systemd.sleep.extraConfig = ''
+    #     AllowSuspend=no
+    #     AllowHibernation=no
+    #     AllowHybridSleep=no
+    #     AllowSuspendThenHibernate=no
+    # '';
+    #
+    # systemd = {
+    #     targets = {
+    #         sleep = {
+    #             enable = false;
+    #             unitConfig.DefaultDependencies = "no";
+    #         };
+    #         suspend = {
+    #             enable = false;
+    #             unitConfig.DefaultDependencies = "no";
+    #         };
+    #         hibernate = {
+    #             enable = false;
+    #             unitConfig.DefaultDependencies = "no";
+    #         };
+    #         "hybrid-sleep" = {
+    #             enable = false;
+    #             unitConfig.DefaultDependencies = "no";
+    #         };
+    #     };
+    # };
 
     services.xserver.dpi = 115;
 
@@ -93,7 +96,15 @@
 
     console.keyMap = "pl2";
 
-    services.printing.enable = true;
+    services.printing = {
+        enable = true;
+        drivers = [ pkgs.hplip ];
+    };
+    services.avahi = {
+        enable = true;
+        nssmdns4 = true;
+        openFirewall = true;
+    };
 
     services.pulseaudio.enable = false;
     services.pulseaudio.support32Bit = true;
@@ -118,7 +129,7 @@
     hardware.graphics = {
         enable = true;
         enable32Bit = true;
-        extraPackages = [ pkgs.mesa.drivers ];
+        extraPackages = [ pkgs.mesa ];
     };
 
     services.xserver.videoDrivers = ["nvidia"];

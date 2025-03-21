@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
     imports = [
@@ -25,10 +25,12 @@
         # gnu-cobol
 
         # rustc
+        nixd
         cargo
         nil
         nodePackages.bash-language-server
-        racket
+        # racket
+        lua-language-server
     ];
 }
 
