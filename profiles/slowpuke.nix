@@ -24,8 +24,8 @@ in
         aseprite
         # decker
         gimp
-        # krita
-        # opentabletdriver
+        krita
+        opentabletdriver
 
         ### AUDIO ###
         # bespokesynth
@@ -59,6 +59,7 @@ in
         vlc
         vesktop
         viewnior
+        weechat
         wine
         yt-dlp
         zathura
@@ -77,7 +78,7 @@ in
         package = pkgs.posy-cursors;
         x11.defaultCursor = "Posy's Cursor Black";
     };
-
+    
     xdg.mimeApps = {
         enable = true;
         defaultApplications = {  

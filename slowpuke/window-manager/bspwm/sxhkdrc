@@ -5,8 +5,8 @@ super + shift + Escape
     bspc wm -r
 
 # close window
-super + q
-    bspc node -c
+super + {_,shift + }q
+    bspc node -{c,k}
 
 # moves window
 super + {h,j,k,l}
